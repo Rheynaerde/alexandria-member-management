@@ -35,5 +35,18 @@ class User_model extends CI_Model {
             )
         );
     }
+    
+    function change_password($newpassword, $username = NULL) {
+        if(!isset($username)){
+            //if the username is not supplied,
+            //we assume that the change is for the current user
+            $username = $this->session->username;
+            if(!isset($username)){
+                return;
+            }
+        }
+        $this->db->where('username', $username)
+                ->update('users', array('password' => sha1($newpassword)));
+    }
 }
 
