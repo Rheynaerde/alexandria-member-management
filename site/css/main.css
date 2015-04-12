@@ -49,6 +49,20 @@ p.footer {
     color: #800;
 }
 
+.error_message {
+    color: #000;
+    background-color: #ff9896;
+    border: 1px solid #d62728;
+    padding: 2px 10px;
+}
+
+.success_message {
+    color: #000;
+    background-color: #98df8a;
+    border: 1px solid #2ca02c;
+    padding: 2px 10px;
+}
+
 #menu-container {
     float: none;
     margin-bottom: 60px;
