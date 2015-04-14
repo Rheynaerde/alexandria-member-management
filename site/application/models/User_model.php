@@ -28,7 +28,7 @@ class User_model extends CI_Model {
         $this->session->set_userdata( array(
                 'id'=>$this->details->id,
                 'uiname'=> $this->details->firstName . ' ' . $this->details->lastName,
-                'name'=>$this->details->email,
+                'email'=>$this->details->email,
                 'username'=>$this->details->username,
                 'isAdmin'=>$this->details->isAdmin,
                 'isLoggedIn'=>true
