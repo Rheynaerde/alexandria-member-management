@@ -3,7 +3,7 @@
 -- 
 
 CREATE TABLE IF NOT EXISTS `users` (
-        `id` int(10) unsigned NOT NULL,
+        `id` int(11) NOT NULL,
         `email` varchar(45) DEFAULT NULL,
         `firstName` varchar(45) DEFAULT NULL,
         `lastName` varchar(45) DEFAULT NULL,
@@ -20,4 +20,4 @@ ALTER TABLE `users`
 
 -- id should auto-increment
 ALTER TABLE `users`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
