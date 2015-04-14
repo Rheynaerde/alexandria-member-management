@@ -31,6 +31,7 @@ class User_model extends CI_Model {
                 'email'=>$this->details->email,
                 'username'=>$this->details->username,
                 'isAdmin'=>$this->details->isAdmin,
+                'hasMemberManagementRights'=>$this->details->hasMemberManagementRights,
                 'isLoggedIn'=>true
             )
         );
