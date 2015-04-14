@@ -9,7 +9,8 @@ CREATE TABLE IF NOT EXISTS `users` (
         `lastName` varchar(45) DEFAULT NULL,
         `username` varchar(45) NOT NULL,
         `password` varchar(45) NOT NULL,
-        `isAdmin` tinyint(1) DEFAULT '0'
+        `isAdmin` tinyint(1)  NOT NULL DEFAULT '0',
+        `hasMemberManagementRights` tinyint(1) NOT NULL DEFAULT '0'
 );
 
 -- Set the indices for this table
