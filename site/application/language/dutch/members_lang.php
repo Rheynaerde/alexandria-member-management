@@ -8,6 +8,11 @@ $lang['members.overview.birthdate.minwidth'] = '120px';
 $lang['members.overview.gender.minwidth'] = '100px';
 $lang['members.overview.hand.minwidth'] = '100px';
 
+$lang['members.overview.pdf.filename.prefix'] = 'ledenlijst_';
+$lang['members.overview.pdf.filename.dateformat'] = 'Y-m-d';
+$lang['members.overview.pdf.header.dateformat'] = 'd-m-Y';
+$lang['members.overview.pdf.header.format'] = 'Ledenlijst (%s): {PAGE_NUM}/{PAGE_COUNT}';
+
 $lang['members.properties.lastname'] = 'Familienaam';
 $lang['members.properties.firstname'] = 'Voornaam';
 $lang['members.properties.birthdate'] = 'Geboortedatum';
