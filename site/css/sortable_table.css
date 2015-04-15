@@ -21,6 +21,14 @@ table.sortable tbody tr::before {
     content: counter(sortabletablescope);
     counter-increment: sortabletablescope;
     display: table-cell;
+    padding-right: 5pt;
+}
+
+table.sortable tbody tr:nth-child(2n)::before {
+  background: #fff;
+}
+table.sortable tbody tr:nth-child(2n+1)::before {
+  background: #eee;
 }
 
 table.sortable tbody tr:nth-child(2n) td {
