@@ -1,13 +1,6 @@
 <?php
 
-class Members extends CI_Controller {
-
-    public function __construct() {
-        parent::__construct();
-        if( !$this->session->userdata('isLoggedIn') ) {
-            redirect('/login/show_login');
-        }
-    }
+class Members extends MY_Controller {
     
     function index() {
         redirect('/members/overview');

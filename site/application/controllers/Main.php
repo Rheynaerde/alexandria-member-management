@@ -1,13 +1,6 @@
 <?php
 
-class Main extends CI_Controller {
-
-    public function __construct() {
-        parent::__construct();
-        if( !$this->session->userdata('isLoggedIn') ) {
-            redirect('/login/show_login');
-        }
-    }
+class Main extends MY_Controller {
     
     function welcome() {
         $this->lang->load('main');
