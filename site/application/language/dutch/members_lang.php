@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('Directe toegang tot scripts is niet toegestaan');
 
 $lang['members.overview.title'] = 'Ledenoverzicht';
+$lang['members.overview.download'] = 'Download lijst als PDF';
 $lang['members.overview.lastname.minwidth'] = '120px';
 $lang['members.overview.firstname.minwidth'] = '120px';
 $lang['members.overview.birthdate.minwidth'] = '120px';

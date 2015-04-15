@@ -5,6 +5,7 @@ $this->lang->load('members');
 ?>
 
 <div id="body">
+    <a href="<?php echo site_url('pdf/members/overview'); ?>"><button type="button"><?php echo $this->lang->line('members.overview.download'); ?></button></a>
     <table class="sortable">
         <thead>
             <th style="min-width: <?php echo $this->lang->line('members.overview.lastname.minwidth'); ?>"><?php echo $this->lang->line('members.properties.lastname'); ?></th>

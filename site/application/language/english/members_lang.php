@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 $lang['members.overview.title'] = 'Member overview';
+$lang['members.overview.download'] = 'Download overview as PDF';
 $lang['members.overview.lastname.minwidth'] = '120px';
 $lang['members.overview.firstname.minwidth'] = '120px';
 $lang['members.overview.birthdate.minwidth'] = '120px';
