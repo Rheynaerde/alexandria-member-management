@@ -21,5 +21,28 @@ class Member_model extends CI_Model {
 
         return $result;
     }
+    
+    function user_members($user_id, $only_names=true) {
+        $this->db->from('members');
+        if($only_names){
+            $this->db->select('members.id, persons.firstName, persons.lastName');
+            $this->db->join('persons', 'persons.id=members.person_id', 'left');
+            $this->db->join('user_member', 'user_member.member_id=members.id', 'left');
+            $this->db->where('user_member.user_id', $user_id);
+        } else {
+            $this->db->select('members.id, persons.firstName, persons.lastName, persons.birthdate, members.federation_id');
+            $this->db->select('gender.name as gender');
+            $this->db->select('hand.name as hand');
+            $this->db->join('persons', 'persons.id=members.person_id', 'left');
+            $this->db->join('gender', 'gender.id=persons.gender_id', 'left');
+            $this->db->join('hand', 'hand.id=members.hand_id', 'left');
+            $this->db->join('user_member', 'user_member.member_id=members.id', 'left');
+            $this->db->where('user_member.user_id', $user_id);
+        }
+        $this->db->order_by('persons.lastName', 'ASC');
+        $result = $this->db->get();
+
+        return $result;
+    }
 }
 
