@@ -1,5 +1,5 @@
 --
--- Just some randomly generated data for testing-purposes.
+-- Just some randomly generated persons/members for testing-purposes.
 -- 
 
 INSERT INTO `persons` (`firstName`, `lastName`, `birthdate`, `gender_id`) VALUES
@@ -165,3 +165,20 @@ INSERT INTO `members` (`person_id`, `federation_id`, `hand_id`) VALUES
   ('78', '102840', '1'),
   ('79', '109517', '1'),
   ('80', '104944', '1');
+
+--
+-- Create some users. Only use this for local testing.
+--
+INSERT INTO `users` (`email`, `firstName`, `lastName`, `username`, `password`, `isAdmin`, `hasMemberManagementRights`) VALUES
+  ('test@domain.com', 'Test', 'User', 'test1', SHA1('password'), '1', '1'),
+  ('test@domain.com', 'Test', 'User', 'test2', SHA1('password'), '0', '1'),
+  ('test@domain.com', 'Test', 'User', 'test3', SHA1('password'), '0', '0');
+
+--
+-- Connect some members to the third user
+--
+INSERT INTO `user_member` (`id`, `user_id`, `member_id`, `type_id`) VALUES
+  (NULL, '3', '13', '1'),
+  (NULL, '3', '74', '2');
+
+
