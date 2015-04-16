@@ -41,6 +41,8 @@ table.tablesorter tbody tr::before {
     counter-increment: sortabletablescope;
     display: table-cell;
     padding-right: 5pt;
+    text-align: right;
+    min-width: 2em;
 }
 
 table.tablesorter tbody tr.even::before {
