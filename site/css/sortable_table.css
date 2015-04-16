@@ -1,47 +1,96 @@
 /* Sortable tables */
-table.sortable thead {
+table.tablesorter thead {
     background-color:#ccc;
     color:#666666;
     font-weight: bold;
     cursor: default;
 }
 
-table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
-    content: " \25B4\25BE" 
+table.tablesorter th.tablesorter-header { 
+    /* white (unsorted) double arrow */
+    background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAAP///////yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==);
+    background-repeat: no-repeat;
+    background-position: center right;
 }
 
-table.sortable tbody {
+table.tablesorter th.tablesorter-headerAsc {
+    /* white asc arrow */
+    background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAAP///////yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7);
+    background-color:#aaa;
+}
+
+table.tablesorter th.tablesorter-headerDesc {
+    /* white desc arrow */
+    background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAAP///////yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
+    background-color:#aaa;
+}
+
+table.tablesorter th.sorter-false {
+	background-image: none;
+}
+
+table.tablesorter tbody {
     counter-reset: sortabletablescope;
 }
-table.sortable thead tr::before {
+table.tablesorter thead tr::before {
     content: "";
     display: table-cell;
 }
-table.sortable tbody tr::before {
+table.tablesorter tbody tr::before {
     content: counter(sortabletablescope);
     counter-increment: sortabletablescope;
     display: table-cell;
     padding-right: 5pt;
 }
 
-table.sortable tbody tr:nth-child(2n)::before {
+table.tablesorter tbody tr.even::before {
   background: #fff;
 }
-table.sortable tbody tr:nth-child(2n+1)::before {
+table.tablesorter tbody tr.odd::before {
   background: #eee;
 }
 
-table.sortable tbody tr:nth-child(2n) td {
+table.tablesorter tbody tr.even td {
   background: #fff;
 }
-table.sortable tbody tr:nth-child(2n+1) td {
+table.tablesorter tbody tr.odd td {
   background: #eee;
 }
 
-table.sortable th.sorttable_sorted span {
-    color: #2ca02c;
+/*
+ * Rules related to filters
+ */
+
+.tablesorter .filtered {
+	display: none;
 }
 
-table.sortable th.sorttable_sorted_reverse span {
-    color: #2ca02c;
+
+/* filter row */
+.tablesorter-filter-row td {
+  background: #ccc;
+  line-height: normal;
+  text-align: center; /* center the input */
+  -webkit-transition: line-height 0.1s ease;
+  -moz-transition: line-height 0.1s ease;
+  -o-transition: line-height 0.1s ease;
+  transition: line-height 0.1s ease;
+}
+
+/* filters */
+.tablesorter-filter {
+  width: 95%;
+  height: inherit;
+  margin: 4px;
+  padding: 4px;
+  background-color: #fff;
+  border: 1px solid #bbb;
+  color: #333;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: height 0.1s ease;
+  -moz-transition: height 0.1s ease;
+  -o-transition: height 0.1s ease;
+  transition: height 0.1s ease;
 }
