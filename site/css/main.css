@@ -96,6 +96,40 @@ li.navigation-menu-item-right {
     list-style:none;
 }
 
+#submenu-container {
+    float: none;
+    height: 40px;
+}
+
+ul.navigation-submenu {
+    list-style-type: none;
+    margin: 0;
+    margin-top: -10px;
+    padding: 0;
+    font-family: sans-serif;
+    float:left;
+    width:100%;
+    border-bottom: 1px solid #D0D0D0;
+}
+
+ul.navigation-submenu {
+    background: transparent;
+}
+
+li.navigation-submenu-item {
+    float: left;
+    list-style:none;
+}
+
+li.navigation-submenu-item:first-child {
+    margin-left: 6px;
+}
+
+li.navigation-submenu-item-right {
+    float: right;
+    list-style:none;
+}
+
 a:link.navigation-item, a:visited.navigation-item {
     display: block;
     font-weight: bold;
