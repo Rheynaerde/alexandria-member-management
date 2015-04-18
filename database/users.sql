@@ -22,4 +22,4 @@ ALTER TABLE `users`
 
 -- id should auto-increment
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
