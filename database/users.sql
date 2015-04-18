@@ -10,13 +10,15 @@ CREATE TABLE IF NOT EXISTS `users` (
         `username` varchar(45) NOT NULL,
         `password` varchar(45) NOT NULL,
         `isAdmin` tinyint(1)  NOT NULL DEFAULT '0',
-        `hasMemberManagementRights` tinyint(1) NOT NULL DEFAULT '0'
+        `hasMemberManagementRights` tinyint(1) NOT NULL DEFAULT '0',
+        `isActive` tinyint(1) NOT NULL DEFAULT '1'
 );
 
 -- Set the indices for this table
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`);
+  ADD UNIQUE KEY `username` (`username`),
+  ADD KEY `isActive` (`isActive`);
 
 -- id should auto-increment
 ALTER TABLE `users`
