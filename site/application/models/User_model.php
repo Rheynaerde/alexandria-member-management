@@ -10,7 +10,7 @@ class User_model extends CI_Model {
         $this->db->from('users');
         $this->db->where('username', $username);
         $this->db->where('isActive', 1);
-        $this->db->where( 'password', sha1($password) );
+        $this->db->where('password', sha1($password));
         $result = $this->db->get()->result();
 
         // If a value exists, then the user account exists and is validated
