@@ -44,5 +44,17 @@ class Member_model extends CI_Model {
 
         return $result;
     }
+    
+    function current_user_can_manage_member($member_id){
+        if($this->session->userdata('hasMemberManagementRights')){
+            return true;
+        } else {
+            $this->db->from('user_member');
+            $this->db->where('user_id', $this->session->userdata('id'));
+            $this->db->where('member_id', $member_id);
+            $result = $this->db->get()->result();
+            return is_array($result) && count($result) > 0;
+        }
+    }
 }
 
