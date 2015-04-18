@@ -9,6 +9,7 @@ class User_model extends CI_Model {
         // Retrieve the users which match the given username and password combination
         $this->db->from('users');
         $this->db->where('username', $username);
+        $this->db->where('isActive', 1);
         $this->db->where( 'password', sha1($password) );
         $result = $this->db->get()->result();
 
@@ -36,7 +37,7 @@ class User_model extends CI_Model {
             )
         );
     }
-    
+
     function change_password($newpassword, $username = NULL) {
         if(!isset($username)){
             //if the username is not supplied,
