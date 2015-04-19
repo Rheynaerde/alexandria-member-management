@@ -74,5 +74,10 @@ class User_model extends CI_Model {
             return NULL;
         }
     }
+    
+    function set_management_rights($user_id, $rights){
+        $this->db->where('id', $user_id);
+        $this->db->update('users', array('hasMemberManagementRights' => (int)$rights));
+    }
 }
 
