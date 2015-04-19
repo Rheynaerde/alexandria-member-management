@@ -37,7 +37,7 @@ class User_model extends CI_Model {
             )
         );
     }
-
+    
     function change_password($newpassword, $username = NULL) {
         if(!isset($username)){
             //if the username is not supplied,
@@ -49,6 +49,18 @@ class User_model extends CI_Model {
         }
         $this->db->where('username', $username)
                 ->update('users', array('password' => sha1($newpassword)));
+    }
+    
+    function all_users($only_active=true) {
+        $this->db->from('users');
+        $this->db->select('id, username, firstName, lastName, email, isAdmin, hasMemberManagementRights, isActive');
+        if($only_active){
+            $this->db->where('isActive', 1);
+        }
+        $this->db->order_by('username', 'ASC');
+        $result = $this->db->get();
+
+        return $result;
     }
 }
 
