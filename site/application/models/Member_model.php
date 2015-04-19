@@ -62,5 +62,22 @@ class Member_model extends CI_Model {
         $result = $this->db->get()->result();
         return is_array($result) && count($result) == 1;
     }
+    
+    function get_member($member_id){
+        $this->db->from('members');
+        $this->db->select('members.id, persons.firstName, persons.lastName, persons.birthdate, members.federation_id');
+        $this->db->select('gender.name as gender');
+        $this->db->select('hand.name as hand');
+        $this->db->join('persons', 'persons.id=members.person_id', 'left');
+        $this->db->join('gender', 'gender.id=persons.gender_id', 'left');
+        $this->db->join('hand', 'hand.id=members.hand_id', 'left');
+        $this->db->where('members.id', $member_id);
+        $result = $this->db->get()->result();
+        if(is_array($result) && count($result) == 1){
+            return $result[0];
+        } else {
+            return NULL;
+        }
+    }
 }
 
