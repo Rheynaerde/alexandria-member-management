@@ -84,5 +84,10 @@ class User_model extends CI_Model {
         $this->db->where('id', $user_id);
         $this->db->update('users', array('isAdmin' => (int)$is_admin));
     }
+    
+    function set_active($user_id, $is_active){
+        $this->db->where('id', $user_id);
+        $this->db->update('users', array('isActive' => (int)$is_active));
+    }
 }
 
