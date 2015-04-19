@@ -62,5 +62,17 @@ class User_model extends CI_Model {
 
         return $result;
     }
+    
+    function get_user($user_id) {
+        $this->db->from('users');
+        $this->db->select('id, username, firstName, lastName, email, isAdmin, hasMemberManagementRights, isActive');
+        $this->db->where('id', $user_id);
+        $result = $this->db->get()->result();
+        if(is_array($result) && count($result) == 1){
+            return $result[0];
+        } else {
+            return NULL;
+        }
+    }
 }
 
