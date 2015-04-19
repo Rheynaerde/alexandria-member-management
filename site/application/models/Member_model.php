@@ -56,5 +56,11 @@ class Member_model extends CI_Model {
             return is_array($result) && count($result) > 0;
         }
     }
+    
+    function does_member_exist($member_id){
+        $this->db->from('members')->select('id')->where('id', $member_id);
+        $result = $this->db->get()->result();
+        return is_array($result) && count($result) == 1;
+    }
 }
 
