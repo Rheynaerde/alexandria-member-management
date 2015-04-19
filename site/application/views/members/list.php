@@ -57,8 +57,8 @@ $this->lang->load('sortabletable');
         <tbody>
 <?php foreach ($query->result() as $row) { ?>
             <tr>
-                <td><?php echo $row->lastName; ?></td>
-                <td><?php echo $row->firstName; ?></td>
+                <td><a href="<?php echo site_url('members/view/' . $row->id); ?>"><?php echo $row->lastName; ?></a></td>
+                <td><a href="<?php echo site_url('members/view/' . $row->id); ?>"><?php echo $row->firstName; ?></a></td>
                 <td><?php echo $row->birthdate; ?></td>
                 <td><?php echo $this->lang->line('members.properties.gender.' . $row->gender); ?></td>
                 <td><?php echo $this->lang->line('members.properties.hand.' . $row->hand); ?></td>
