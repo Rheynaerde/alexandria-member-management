@@ -79,5 +79,10 @@ class User_model extends CI_Model {
         $this->db->where('id', $user_id);
         $this->db->update('users', array('hasMemberManagementRights' => (int)$rights));
     }
+    
+    function set_admin($user_id, $is_admin){
+        $this->db->where('id', $user_id);
+        $this->db->update('users', array('isAdmin' => (int)$is_admin));
+    }
 }
 
