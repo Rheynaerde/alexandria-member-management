@@ -14,6 +14,11 @@ $lang['members.overview.pdf.filename.dateformat'] = 'Y-m-d';
 $lang['members.overview.pdf.header.dateformat'] = 'm-d-Y';
 $lang['members.overview.pdf.header.format'] = 'Member overview (%s): {PAGE_NUM}/{PAGE_COUNT}';
 
+$lang['members.view.title'] = 'Member: %1$s %2$s';
+$lang['members.view.403.title'] = 'Error';
+$lang['members.view.403.message'] = 'You are not authorized to view this user.';
+$lang['members.view.data'] = 'Data';
+
 $lang['members.properties.lastname'] = 'Last name';
 $lang['members.properties.firstname'] = 'First name';
 $lang['members.properties.birthdate'] = 'Birthdate';

@@ -14,6 +14,11 @@ $lang['members.overview.pdf.filename.dateformat'] = 'Y-m-d';
 $lang['members.overview.pdf.header.dateformat'] = 'd-m-Y';
 $lang['members.overview.pdf.header.format'] = 'Ledenlijst (%s): {PAGE_NUM}/{PAGE_COUNT}';
 
+$lang['members.view.title'] = 'Lid: %1$s %2$s';
+$lang['members.view.403.title'] = 'Fout';
+$lang['members.view.403.message'] = 'Je bent niet gemachtigd om deze gebruiker te bekijken.';
+$lang['members.view.data'] = 'Gegevens';
+
 $lang['members.properties.lastname'] = 'Familienaam';
 $lang['members.properties.firstname'] = 'Voornaam';
 $lang['members.properties.birthdate'] = 'Geboortedatum';
