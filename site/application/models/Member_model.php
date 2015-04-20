@@ -79,5 +79,17 @@ class Member_model extends CI_Model {
             return NULL;
         }
     }
+    
+    function get_person_id($member_id){
+        $this->db->from('members');
+        $this->db->select('person_id');
+        $this->db->where('id', $member_id);
+        $result = $this->db->get()->result();
+        if(is_array($result) && count($result) == 1){
+            return $result[0]->person_id;
+        } else {
+            return NULL;
+        }
+    }
 }
 
