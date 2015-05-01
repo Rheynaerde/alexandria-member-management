@@ -196,3 +196,10 @@ INSERT INTO `person_address` (`person_id`, `address_id`, `comment`) VALUES
   ('1', '1', NULL),
   ('2', '2', NULL);
 
+INSERT INTO `mailadresses` (`mailaddress`) VALUES
+  ('wolkje@domein.be'),
+  ('wolkje@mijn-werk.be');
+
+INSERT INTO `person_mailaddress` (`person_id`, `mailaddress_id`, `comment`) VALUES
+  ('2', '1', NULL),
+  ('2', '2', 'werk');
