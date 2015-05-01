@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 $this->lang->load('members');
+$this->lang->load('countries');
 ?>
 
 <div id="body">
@@ -32,6 +33,33 @@ $this->lang->load('members');
             <tr>
                 <td class="property"><?php echo $this->lang->line('members.properties.hand'); ?></td>
                 <td><?php echo $this->lang->line('members.properties.hand.' . $member->hand); ?></td>
+            </tr>
+            <tr>
+                <td class="property"><?php echo $this->lang->line('members.properties.address'); ?></td>
+                <td><?php
+                $is_first = true;
+                foreach ($addresses as $address) {
+                    if(!$is_first){
+                        ?><br><br><?php
+                    }
+                    $is_first = false;
+                    if(isset($address->box)){
+                        echo sprintf($this->lang->line('members.view.address.format.withbox'), $address->street, $address->number, $address->box);
+                    } else {
+                        echo sprintf($this->lang->line('members.view.address.format.nobox'), $address->street, $address->number);
+                    }
+                    ?><br><?php
+                    echo sprintf($this->lang->line('members.view.address.format.city'), $address->zip, $address->city);
+                    ?><br><?php
+                    echo $this->lang->line('countries.' . $address->country);
+                    if(isset($address->comment)){
+                        ?><br><b><?php
+                        echo $this->lang->line('members.view.address.comment');
+                        ?></b>: <?php
+                        echo $address->comment;
+                    }
+                }
+                ?></td>
             </tr>
         </tbody>
     </table>

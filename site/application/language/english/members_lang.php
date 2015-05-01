@@ -18,6 +18,10 @@ $lang['members.view.title'] = 'Member: %1$s %2$s';
 $lang['members.view.403.title'] = 'Error';
 $lang['members.view.403.message'] = 'You are not authorized to view this user.';
 $lang['members.view.data'] = 'Data';
+$lang['members.view.address.format.nobox'] = '%2$s %1$s';
+$lang['members.view.address.format.withbox'] = '%2$s %1$s, box %3$s';
+$lang['members.view.address.format.city'] = '%1$s %2$s';
+$lang['members.view.address.comment'] = 'Comment';
 
 $lang['members.properties.lastname'] = 'Last name';
 $lang['members.properties.firstname'] = 'First name';
@@ -30,3 +34,4 @@ $lang['members.properties.hand'] = 'Hand';
 $lang['members.properties.hand.right'] = 'Right';
 $lang['members.properties.hand.left'] = 'Left';
 $lang['members.properties.hand.unset'] = 'Unset';
+$lang['members.properties.address'] = 'Address';
