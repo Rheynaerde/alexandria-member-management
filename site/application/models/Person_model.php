@@ -15,5 +15,15 @@ class Person_model extends CI_Model {
 
         return $result;
     }
+    
+    function get_mail_addresses($person_id) {
+        $this->db->from('person_mailaddress');
+        $this->db->select('mailaddress, comment, isActive');
+        $this->db->join('mailaddresses', 'mailaddresses.id=mailaddress_id', 'left');
+        $this->db->where('person_id', $person_id);
+        $result = $this->db->get()->result();
+
+        return $result;
+    }
 
 }
