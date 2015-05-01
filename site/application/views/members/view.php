@@ -61,6 +61,32 @@ $this->lang->load('countries');
                 }
                 ?></td>
             </tr>
+            <tr>
+                <td class="property"><?php echo $this->lang->line('members.properties.mailaddress'); ?></td>
+                <td><?php
+                $is_first = true;
+                foreach ($mailaddresses as $mailaddress) {
+                    if(!$is_first){
+                        ?>, <?php
+                    }
+                    $is_first = false;
+                    if($mailaddress->isActive){
+                        ?><a href="mailto:<?php echo $mailaddress->mailaddress;
+                        ?>"><?php echo $mailaddress->mailaddress;
+                        ?></a><?php
+                    } else {
+                        ?><span class="inactivemail"><?php
+                        echo $mailaddress->mailaddress;
+                        ?></span><?php
+                    }
+                    if(isset($mailaddress->comment)){
+                        ?> (<?php
+                        echo $mailaddress->comment;
+                        ?>)<?php
+                    }
+                }
+                ?></td>
+            </tr>
         </tbody>
     </table>
 

@@ -32,6 +32,7 @@ class Members extends MY_Controller {
             if($this->member_model->does_member_exist($member_id)){
                 $member = $this->member_model->get_member($member_id);
                 $addresses = $this->person_model->get_addresses($this->member_model->get_person_id($member_id));
+                $mailaddresses = $this->person_model->get_mail_addresses($this->member_model->get_person_id($member_id));
                 $data['title'] = sprintf(
                         $this->lang->line('members.view.title'),
                         $member->firstName, $member->lastName);
@@ -39,7 +40,8 @@ class Members extends MY_Controller {
                 $this->load->view('menu', $data);
                 $this->load->view('members/view', array(
                     'member' => $member,
-                    'addresses' => $addresses));
+                    'addresses' => $addresses,
+                    'mailaddresses' => $mailaddresses));
                 $this->load->view('footer', $data);
             } else {
                 show_404();

@@ -166,3 +166,7 @@ table.member_data_table td {
 table.member_data_table td.property {
     width: 100px;
 }
+
+.inactivemail {
+    text-decoration: line-through;
+}

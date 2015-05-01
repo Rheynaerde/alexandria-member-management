@@ -35,3 +35,4 @@ $lang['members.properties.hand.right'] = 'Right';
 $lang['members.properties.hand.left'] = 'Left';
 $lang['members.properties.hand.unset'] = 'Unset';
 $lang['members.properties.address'] = 'Address';
+$lang['members.properties.mailaddress'] = 'Mail address';
