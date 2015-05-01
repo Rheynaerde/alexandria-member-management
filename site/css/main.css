@@ -160,6 +160,7 @@ table.member_data_table th {
 table.member_data_table td {
     text-align: left;
     padding: 5px;
+    vertical-align: top;
 }
 
 table.member_data_table td.property {
