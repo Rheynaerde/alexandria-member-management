@@ -181,4 +181,18 @@ INSERT INTO `user_member` (`id`, `user_id`, `member_id`, `type_id`) VALUES
   (NULL, '3', '13', '1'),
   (NULL, '3', '74', '2');
 
+--
+-- Create some cities
+--
+INSERT INTO `cities` (`name`, `zip`, `country_id`) VALUES
+  ('Gent', '9000', '1'),
+  ('Dendermonde', '9200', '1');
+
+INSERT INTO `addresses` (`street`, `number`, `box`, `city_id`) VALUES
+  ('Sesamstraat', '42', NULL, 1),
+  ('Straatje zonder einde', '2', 'B5', 2);
+
+INSERT INTO `person_address` (`person_id`, `address_id`, `comment`) VALUES
+  ('1', '1', NULL),
+  ('2', '2', NULL);
 
