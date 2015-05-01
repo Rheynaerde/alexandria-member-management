@@ -7,7 +7,7 @@ class Person_model extends CI_Model {
         $this->db->select('comment, street, number, box, zip');
         $this->db->select('cities.name as city');
         $this->db->select('countries.name as country');
-        $this->db->join('addresses', 'addresses.id=person_address.id', 'left');
+        $this->db->join('addresses', 'addresses.id=address_id', 'left');
         $this->db->join('cities', 'addresses.city_id=cities.id', 'left');
         $this->db->join('countries', 'cities.country_id=countries.id', 'left');
         $this->db->where('person_id', $person_id);
