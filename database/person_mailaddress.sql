@@ -27,5 +27,5 @@ ALTER TABLE `person_mailaddress`
 -- Constraints for table `person_mailaddress`
 --
 ALTER TABLE `person_mailaddress`
-  ADD CONSTRAINT `pm_mailaddress` FOREIGN KEY (`mailaddress_id`) REFERENCES `mailadresses` (`id`),
+  ADD CONSTRAINT `pm_mailaddress` FOREIGN KEY (`mailaddress_id`) REFERENCES `mailaddresses` (`id`),
   ADD CONSTRAINT `pm_person` FOREIGN KEY (`person_id`) REFERENCES `persons` (`id`);

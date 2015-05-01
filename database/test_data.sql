@@ -196,7 +196,7 @@ INSERT INTO `person_address` (`person_id`, `address_id`, `comment`) VALUES
   ('1', '1', NULL),
   ('2', '2', NULL);
 
-INSERT INTO `mailadresses` (`mailaddress`) VALUES
+INSERT INTO `mailaddresses` (`mailaddress`) VALUES
   ('wolkje@domein.be'),
   ('wolkje@mijn-werk.be');
 
