@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `isAdmin` tinyint(1)  NOT NULL DEFAULT '0',
   `hasMemberManagementRights` tinyint(1) NOT NULL DEFAULT '0',
   `isActive` tinyint(1) NOT NULL DEFAULT '1'
-);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Set the indices for this table
 ALTER TABLE `users`
