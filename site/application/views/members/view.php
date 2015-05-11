@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $this->lang->load('members');
 $this->lang->load('countries');
+$this->lang->load('membershiptypes');
 ?>
 
 <div id="body">
@@ -87,6 +88,37 @@ $this->lang->load('countries');
                 }
                 ?></td>
             </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th colspan="2"><?php echo $this->lang->line('members.view.memberships'); ?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            foreach($memberships as $membership){
+            ?>
+            <tr>
+                <td colspan="2">
+                    <b><?php echo $this->lang->line('membershiptypes.' . $membership->type); ?></b>
+                    (<?php
+                    if($membership->type == 'trial_lesson') {
+                        echo sprintf($this->lang->line('members.view.memberships.dateformat.single'),
+                                date($this->lang->line('members.view.memberships.dateformat'),
+                                        strtotime($membership->start_date)));
+                    } else {
+                        echo sprintf($this->lang->line('members.view.memberships.dateformat.period'),
+                                date($this->lang->line('members.view.memberships.dateformat'),
+                                        strtotime($membership->start_date)),
+                                date($this->lang->line('members.view.memberships.dateformat'),
+                                        strtotime($membership->end_date)));
+                    }
+                    ?>)
+                </td>
+            </tr>
+            <?php
+            }
+            ?>
         </tbody>
     </table>
 

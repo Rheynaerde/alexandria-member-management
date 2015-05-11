@@ -22,6 +22,10 @@ $lang['members.view.address.format.nobox'] = '%1$s %2$s';
 $lang['members.view.address.format.withbox'] = '%1$s %2$s bus %3$s';
 $lang['members.view.address.format.city'] = '%1$s %2$s';
 $lang['members.view.address.comment'] = 'Opmerking';
+$lang['members.view.memberships'] = 'Lidmaatschappen';
+$lang['members.view.memberships.dateformat'] = 'd-m-Y';
+$lang['members.view.memberships.dateformat.single'] = '%1$s';
+$lang['members.view.memberships.dateformat.period'] = 'Van %1$s tot %2$s';
 
 $lang['members.properties.lastname'] = 'Familienaam';
 $lang['members.properties.firstname'] = 'Voornaam';

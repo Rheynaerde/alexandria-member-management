@@ -22,6 +22,10 @@ $lang['members.view.address.format.nobox'] = '%2$s %1$s';
 $lang['members.view.address.format.withbox'] = '%2$s %1$s, box %3$s';
 $lang['members.view.address.format.city'] = '%1$s %2$s';
 $lang['members.view.address.comment'] = 'Comment';
+$lang['members.view.memberships'] = 'Memberships';
+$lang['members.view.memberships.dateformat'] = 'm-d-Y';
+$lang['members.view.memberships.dateformat.single'] = '%1$s';
+$lang['members.view.memberships.dateformat.period'] = 'From %1$s until %2$s';
 
 $lang['members.properties.lastname'] = 'Last name';
 $lang['members.properties.firstname'] = 'First name';
