@@ -167,6 +167,10 @@ table.member_data_table td.property {
     width: 100px;
 }
 
+table.member_data_table thead:not(:first-child) tr th {
+    padding-top: 30px;
+}
+
 .inactivemail {
     text-decoration: line-through;
 }
