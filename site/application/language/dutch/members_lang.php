@@ -26,6 +26,9 @@ $lang['members.view.memberships'] = 'Lidmaatschappen';
 $lang['members.view.memberships.dateformat'] = 'd-m-Y';
 $lang['members.view.memberships.dateformat.single'] = '%1$s';
 $lang['members.view.memberships.dateformat.period'] = 'Van %1$s tot %2$s';
+$lang['members.view.certificates'] = 'Attesten';
+$lang['members.view.certificates.dateformat'] = 'd-m-Y';
+$lang['members.view.certificates.dateformat.period'] = 'Van %1$s tot %2$s';
 
 $lang['members.properties.lastname'] = 'Familienaam';
 $lang['members.properties.firstname'] = 'Voornaam';

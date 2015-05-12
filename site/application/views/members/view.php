@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $this->lang->load('members');
 $this->lang->load('countries');
 $this->lang->load('membershiptypes');
+$this->lang->load('certificatetypes');
 ?>
 
 <div id="body">
@@ -113,6 +114,31 @@ $this->lang->load('membershiptypes');
                                 date($this->lang->line('members.view.memberships.dateformat'),
                                         strtotime($membership->end_date)));
                     }
+                    ?>)
+                </td>
+            </tr>
+            <?php
+            }
+            ?>
+        </tbody>
+        <thead>
+            <tr>
+                <th colspan="2"><?php echo $this->lang->line('members.view.certificates'); ?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            foreach($certificates as $certificate){
+            ?>
+            <tr>
+                <td colspan="2">
+                    <b><?php echo $this->lang->line('certificatetypes.' . $certificate->type); ?></b>
+                    (<?php
+                    echo sprintf($this->lang->line('members.view.certificates.dateformat.period'),
+                                date($this->lang->line('members.view.certificates.dateformat'),
+                                        strtotime($certificate->start_date)),
+                                date($this->lang->line('members.view.certificates.dateformat'),
+                                        strtotime($certificate->end_date)));
                     ?>)
                 </td>
             </tr>

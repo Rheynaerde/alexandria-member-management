@@ -26,6 +26,9 @@ $lang['members.view.memberships'] = 'Memberships';
 $lang['members.view.memberships.dateformat'] = 'm-d-Y';
 $lang['members.view.memberships.dateformat.single'] = '%1$s';
 $lang['members.view.memberships.dateformat.period'] = 'From %1$s until %2$s';
+$lang['members.view.certificates'] = 'Certificates';
+$lang['members.view.certificates.dateformat'] = 'm-d-Y';
+$lang['members.view.certificates.dateformat.period'] = 'From %1$s until %2$s';
 
 $lang['members.properties.lastname'] = 'Last name';
 $lang['members.properties.firstname'] = 'First name';
