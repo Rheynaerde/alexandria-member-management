@@ -19,6 +19,14 @@ class Family_model extends CI_Model {
         $this->db->select('id, name, description');
         return $this->db->get()->result();
     }
+
+    function get_all_families_manageable_by_user($user_id) {
+        $this->db->from('families');
+        $this->db->select('families.id, name, description');
+        $this->db->join('user_family', 'families.id=user_family.family_id', 'left');
+        $this->db->where('user_id', $user_id);
+        return $this->db->get()->result();
+    }
     
     function current_user_can_manage_family($family_id){
         if($this->session->userdata('hasMemberManagementRights')){
