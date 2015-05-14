@@ -43,6 +43,7 @@ table.tablesorter tbody tr::before {
     padding-right: 5pt;
     text-align: right;
     min-width: 2em;
+    vertical-align: middle;
 }
 
 table.tablesorter tbody tr.even::before {
