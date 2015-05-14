@@ -89,6 +89,28 @@ $this->lang->load('certificatetypes');
                 }
                 ?></td>
             </tr>
+<?php if(!empty($families)){ ?>
+            <tr>
+                <td class="property"><?php echo $this->lang->line('members.properties.family'); ?></td>
+                <td><?php
+                $is_first = true;
+                foreach ($families as $family) {
+                    if(!$is_first){
+                        ?>, <?php
+                    }
+                    $is_first = false;
+                    if($this->session->userdata('hasMemberManagementRights') || $family->can_manage){
+                        ?><a href="<?php echo site_url('families/view/' . $family->id); ?>"><?php
+                        echo $family->name;
+                        ?></a><?php
+                    } else {
+                        echo $family->name;
+                    }
+                }
+                ?>
+                </td>
+            </tr>
+<?php } ?>
         </tbody>
         <thead>
             <tr>

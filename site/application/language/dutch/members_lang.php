@@ -43,3 +43,4 @@ $lang['members.properties.hand.left'] = 'Links';
 $lang['members.properties.hand.unset'] = 'Ongekend';
 $lang['members.properties.address'] = 'Adres';
 $lang['members.properties.mailaddress'] = 'E-mail';
+$lang['members.properties.family'] = 'Familie';
