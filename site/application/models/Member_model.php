@@ -91,5 +91,15 @@ class Member_model extends CI_Model {
             return NULL;
         }
     }
+    
+    function get_members_for_family($family_id) {
+        $this->db->from('members');
+        $this->db->select('`members`.`id`, `firstName`, `lastName`, IF(`user_member`.`id` IS NULL, 0, 1) AS can_manage', false);
+        $this->db->join('persons', 'persons.id=members.person_id', 'left');
+        $this->db->join('family_member', 'family_member.member_id=members.id', 'left');
+        $this->db->join('user_member', 'members.id=user_member.member_id and user_id=' . $this->session->userdata('id'), 'left');
+        $this->db->where('family_member.family_id', $family_id);
+        return $this->db->get()->result();
+    }
 }
 
