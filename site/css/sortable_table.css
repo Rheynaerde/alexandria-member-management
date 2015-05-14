@@ -96,3 +96,7 @@ table.tablesorter tbody tr.odd td {
   -o-transition: height 0.1s ease;
   transition: height 0.1s ease;
 }
+
+table.sortable td.action {
+    text-align: center;
+}

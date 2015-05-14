@@ -8,7 +8,7 @@ $this->lang->load('admin/submenu');
 
 <div id="submenu-container">
 <ul class="navigation-submenu">
-   <li class="navigation-submenu-item"><a href="" class="navigation-item"><?php echo $this->lang->line('admin/submenu.users'); ?></a></li>
+   <li class="navigation-submenu-item"><a href="<?php echo site_url('admin/users'); ?>" class="navigation-item"><?php echo $this->lang->line('admin/submenu.users'); ?></a></li>
    <li class="navigation-submenu-item"><a href="" class="navigation-item"><?php echo $this->lang->line('admin/submenu.seasons'); ?></a></li>
 </ul>
 </div>
