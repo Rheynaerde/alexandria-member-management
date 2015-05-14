@@ -5,8 +5,9 @@ class Family_model extends CI_Model {
 
     function get_all_families_for_member($member_id) {
         $this->db->from('families');
-        $this->db->select('families.id, name');
-        $this->db->join('family_member', 'families.id=family_id', 'left');
+        $this->db->select('`families`.`id`, `name`, IF(`user_family`.`id` IS NULL, 0, 1) AS can_manage', false);
+        $this->db->join('family_member', 'families.id=family_member.family_id', 'left');
+        $this->db->join('user_family', 'families.id=user_family.family_id and user_id=' . $this->session->userdata('id'), 'left');
         $this->db->where('member_id', $member_id);
         $result = $this->db->get()->result();
 
