@@ -45,5 +45,17 @@ class Family_model extends CI_Model {
         $result = $this->db->get()->result();
         return is_array($result) && count($result) == 1;
     }
+
+    function get_family($family_id) {
+        $this->db->from('families');
+        $this->db->select('name, description');
+        $this->db->where('id', $family_id);
+        $result = $this->db->get()->result();
+        if(is_array($result) && count($result) == 1){
+            return $result[0];
+        } else {
+            return NULL;
+        }
+    }
 }
 
