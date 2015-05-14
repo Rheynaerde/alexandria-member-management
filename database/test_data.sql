@@ -207,3 +207,12 @@ INSERT INTO `person_mailaddress` (`person_id`, `mailaddress_id`, `comment`) VALU
   ('2', '1', NULL),
   ('2', '2', 'werk'),
   ('2', '3', 'lijkt niet meer toe te komen');
+
+INSERT INTO `families` (`name`, `description`) VALUES
+  ('Aerts-Arijs', ''),
+  ('Aerts alleen', 'Een familie die alleen Aerts bevat.');
+
+INSERT INTO `family_member` (`family_id`, `member_id`) VALUES
+  ('1', '2'),
+  ('1', '44'),
+  ('2', '2');
