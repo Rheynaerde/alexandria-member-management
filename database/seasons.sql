@@ -11,8 +11,8 @@ CREATE TABLE IF NOT EXISTS `seasons` (
   `name` varchar(45) NOT NULL,
   `begin` date NOT NULL,
   `end` date NOT NULL,
-  `isArchived` tinyint(1) NOT NULL DEFAULT '0',
-  `isCurrent` tinyint(1) NOT NULL,
+  `is_archived` tinyint(1) NOT NULL DEFAULT '0',
+  `is_current` tinyint(1) NOT NULL,
   `previous_id` int(11) DEFAULT NULL,
   `next_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
