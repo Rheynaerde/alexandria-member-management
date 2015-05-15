@@ -7,6 +7,7 @@ $lang['admin/seasons.overview.begin.minwidth'] = '150px';
 $lang['admin/seasons.overview.end.minwidth'] = '150px';
 $lang['admin/seasons.overview.previous.minwidth'] = '80px';
 $lang['admin/seasons.overview.next.minwidth'] = '80px';
+$lang['admin/seasons.overview.new'] = 'Nieuw seizoen';
 
 $lang['admin/seasons.create.title'] = 'Nieuw seizoen';
 $lang['admin/seasons.create.begin.placeholder'] = 'jjjj-mm-dd';
