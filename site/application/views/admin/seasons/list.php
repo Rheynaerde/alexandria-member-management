@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $this->lang->load('admin/seasons');
 $this->lang->load('sortabletable');
+$this->lang->load('datepicker');
 ?>
 
 <script>
@@ -16,26 +17,26 @@ $this->lang->load('sortabletable');
                 filter_formatter : {
                     1 : function($cell, indx){
                         return $.tablesorter.filterFormatter.uiDatepicker( $cell, indx, {
-                            monthNamesShort: [<?php echo $this->lang->line('sortabletable.date.months.short'); ?>],
-                            dayNamesMin: [<?php echo $this->lang->line('sortabletable.date.days.min'); ?>],
+                            monthNamesShort: [<?php echo $this->lang->line('datepicker.months.short'); ?>],
+                            dayNamesMin: [<?php echo $this->lang->line('datepicker.days.min'); ?>],
                             yearRange: "1900:c",
                             dateFormat: "yy-mm-dd",
                             textFrom: '<?php echo $this->lang->line('sortabletable.date.from'); ?>',
                             textTo: '<?php echo $this->lang->line('sortabletable.date.to'); ?>',
-                            firstDay: <?php echo $this->lang->line('sortabletable.date.firstday'); ?>,
+                            firstDay: <?php echo $this->lang->line('datepicker.firstday'); ?>,
                             changeMonth: true,
                             changeYear : true
                         });
                     },
                     2 : function($cell, indx){
                         return $.tablesorter.filterFormatter.uiDatepicker( $cell, indx, {
-                            monthNamesShort: [<?php echo $this->lang->line('sortabletable.date.months.short'); ?>],
-                            dayNamesMin: [<?php echo $this->lang->line('sortabletable.date.days.min'); ?>],
+                            monthNamesShort: [<?php echo $this->lang->line('datepicker.months.short'); ?>],
+                            dayNamesMin: [<?php echo $this->lang->line('datepicker.days.min'); ?>],
                             yearRange: "1900:c",
                             dateFormat: "yy-mm-dd",
                             textFrom: '<?php echo $this->lang->line('sortabletable.date.from'); ?>',
                             textTo: '<?php echo $this->lang->line('sortabletable.date.to'); ?>',
-                            firstDay: <?php echo $this->lang->line('sortabletable.date.firstday'); ?>,
+                            firstDay: <?php echo $this->lang->line('datepicker.firstday'); ?>,
                             changeMonth: true,
                             changeYear : true
                         });
