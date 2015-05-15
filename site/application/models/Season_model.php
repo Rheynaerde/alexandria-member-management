@@ -26,5 +26,36 @@ class Season_model extends CI_Model {
         // if any records got selected, then the season name exists
         return (is_array($result) && count($result) > 0);
     }
+    
+    /*
+     * Create a new season and return its id (or false if unsuccessful)
+     */
+    function create_season($name, $begin, $end, $previous, $next, $current = false){
+        //prepare data for creation of season
+        $data['name'] = $name;
+        $data['begin'] = $begin;
+        $data['end'] = $end;
+        $data['is_current'] = $current ? 1 : 0;
+        $data['previous_id'] = ($previous=='-1') ? NULL : $previous;
+        $data['next_id'] = ($next=='-1') ? NULL : $next;
+        
+        //create season in database
+        $this->db->trans_start();
+        if($this->db->insert('seasons',$data)){
+            $season_id = $this->db->insert_id();
+            if($previous!='-1'){
+                $this->db->where('id', $previous)->update('seasons', array('next_id' => $season_id));
+            }
+            if($next!='-1'){
+                $this->db->where('id', $next)->update('seasons', array('previous_id' => $season_id));
+            }
+        }
+        $this->db->trans_complete();
+        if(isset($season_id)){
+            return $season_id;
+        } else {
+            return false;
+        }
+    }
 }
 
