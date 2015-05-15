@@ -13,5 +13,18 @@ class Season_model extends CI_Model {
         $this->db->order_by('s.begin', 'DESC');
         return $this->db->get()->result();
     }
+    
+    /**
+     * Checks whether there is a season with the given name
+     */
+    function name_exists($name){
+        //select all seasons that have this name
+        $this->db->from('seasons');
+        $this->db->where('name', $name);
+        $result = $this->db->get()->result();
+
+        // if any records got selected, then the season name exists
+        return (is_array($result) && count($result) > 0);
+    }
 }
 
