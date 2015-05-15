@@ -31,14 +31,14 @@ class User extends MY_Controller {
         $this->load->library('form_validation');
         $this->form_validation->set_rules('oldpass', 
                 $this->lang->line('settings.password.old'),
-                'required|trim|callback_verify_password');
+                'required|trim|callback__verify_password');
         $this->form_validation->set_rules('newpass', 
                 $this->lang->line('settings.password.new'),
                 'required|trim|differs[oldpass]|min_length[6]');
         $this->form_validation->set_rules('confirmpass', 
                 $this->lang->line('settings.password.confirm'),
                 'required|trim|matches[newpass]');
-        $this->form_validation->set_message('verify_password',
+        $this->form_validation->set_message('_verify_password',
                 $this->lang->line('settings.password.validation.error'));
 
         if($this->form_validation->run()!= true) {
@@ -50,7 +50,7 @@ class User extends MY_Controller {
         }
     }
     
-    function verify_password($password){
+    function _verify_password($password){
         // Create an instance of the user model
         $this->load->model('user_model');
 
