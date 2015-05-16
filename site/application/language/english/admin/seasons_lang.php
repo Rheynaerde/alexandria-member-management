@@ -21,6 +21,9 @@ $lang['admin/seasons.create.field.name'] = 'name';
 $lang['admin/seasons.create.field.begin'] = 'begin';
 $lang['admin/seasons.create.field.end'] = 'end';
 
+$lang['admin/seasons.view.title'] = 'Season: %1$s';
+$lang['admin/seasons.view.data'] = 'Data';
+
 $lang['admin/seasons.properties.name'] = 'Name';
 $lang['admin/seasons.properties.begin'] = 'Begin';
 $lang['admin/seasons.properties.end'] = 'End';

@@ -16,6 +16,25 @@ class Seasons extends Admin_controller {
         $this->load->view('footer',$data);
     }
     
+    function view($season_id) {
+        $this->load->model('season_model');
+        $this->lang->load('admin/seasons');
+        $season = $this->season_model->get_season($season_id);
+        if($season){
+            $data['title'] = sprintf(
+                    $this->lang->line('admin/seasons.view.title'),
+                    $season->name);
+
+            $this->load->view('header',$data);
+            $this->load->view('menu',$data);
+            $this->load->view('admin/submenu',$data);
+            $this->load->view('admin/seasons/view', array('season' => $season));
+            $this->load->view('footer',$data);
+        } else {
+            show_404();
+        }
+    }
+    
     function create() {
         $this->_create();
     }
