@@ -37,6 +37,42 @@ class User_model extends CI_Model {
             )
         );
     }
+
+    /*
+     * Create a new user and return its id (or false if unsuccessful)
+     */
+    function create_new_user($username, $password, $first_name = NULL,
+            $last_name = NULL, $email = NULL, $has_management_rights = false,
+            $is_admin = false, $member_id = NULL) {
+        //prepare data for creation of season
+        $data['username'] = $username;
+        $data['password'] = sha1($password);
+        $data['firstName'] = $first_name;
+        $data['lastName'] = $last_name;
+        $data['email'] = $email;
+        $data['isAdmin'] = $is_admin ? 1 : 0;
+        $data['hasMemberManagementRights'] = $has_management_rights ? 1 : 0;
+
+        //create user in database
+        $this->db->trans_start();
+        if($this->db->insert('users',$data)){
+            $user_id = $this->db->insert_id();
+            //connect user to member
+            if(isset($member_id)){
+                $this->db->insert('user_member', array(
+                    'user_id' => $user_id,
+                    'member_id' => $member_id,
+                    'type_id' => 1 //set as primary
+                ));
+            }
+        }
+        $this->db->trans_complete();
+        if(isset($user_id)){
+            return $user_id;
+        } else {
+            return false;
+        }
+    }
     
     function change_password($newpassword, $username = NULL) {
         if(!isset($username)){
@@ -84,7 +120,7 @@ class User_model extends CI_Model {
         $this->db->where('id', $user_id);
         $this->db->update('users', array('isAdmin' => (int)$is_admin));
     }
-    
+
     function set_active($user_id, $is_active){
         $this->db->where('id', $user_id);
         $this->db->update('users', array('isActive' => (int)$is_active));
