@@ -20,6 +20,7 @@ class Members extends MY_Controller {
 
         $this->load->view('header', $data);
         $this->load->view('menu', $data);
+        $this->load->view('members/list_toolbar');
         $this->load->view('members/list', array('members' => $members));
         $this->load->view('footer', $data);
     }
