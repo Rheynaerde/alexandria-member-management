@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         if ( isset($pdf) ) {
 
           $font = Font_Metrics::get_font("verdana", "bold");
-          $pdf->page_text(72, 18, "<?php echo sprintf($this->lang->line('members.overview.pdf.header.format'),date($this->lang->line('members.overview.pdf.header.dateformat'))); ?>", $font, 12, array(0,0,0));
+          $pdf->page_text(72, 18, "<?php echo $title; ?>", $font, 12, array(0,0,0));
 
         }
         </script>

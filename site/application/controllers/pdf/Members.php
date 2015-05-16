@@ -24,7 +24,10 @@ class Members extends CI_Controller {
             $members = $this->member_model->user_members($this->session->userdata('id'), false);
         }
         
-        $html = $this->load->view('pdf/members/list', array('members' => $members), true);
+        $html = $this->load->view('pdf/members/list', array(
+            'members' => $members,
+            'title' => sprintf($this->lang->line('members.overview.pdf.header.format'), date($this->lang->line('members.overview.pdf.header.dateformat')))
+            ), true);
         
         pdf_create($html, $this->lang->line('members.overview.pdf.filename.prefix') . date($this->lang->line('members.overview.pdf.filename.dateformat')), true);
     }
