@@ -110,5 +110,19 @@ class Member_model extends CI_Model {
         $this->db->where('family_member.family_id', $family_id);
         return $this->db->get()->result();
     }
+    
+    function get_members_for_season($season_id) {
+        $this->db->from('members as m');
+        $this->db->select('m.id, p.firstName, p.lastName, p.birthdate, m.federation_id');
+        $this->db->select('g.name as gender');
+        $this->db->select('h.name as hand');
+        $this->db->join('persons as p', 'p.id=m.person_id', 'left');
+        $this->db->join('memberships as ms', 'ms.member_id=m.id', 'left');
+        $this->db->join('gender as g', 'g.id=p.gender_id', 'left');
+        $this->db->join('hand as h', 'h.id=m.hand_id', 'left');
+        $this->db->where('ms.season_id', $season_id);
+        $this->db->group_by('m.id');
+        return $this->db->get()->result();
+    }
 }
 
