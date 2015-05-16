@@ -129,5 +129,20 @@ class Seasons extends Admin_controller {
             return false;
         }
     }
+    
+    function members($season_id) {
+        $this->load->model('member_model');
+        $this->lang->load('members');
+        
+        $data['title'] = $this->lang->line('members.overview.title');
+        $data['sortable_tables'] = true;
+        $members = $this->member_model->get_members_for_season($season_id);
+
+        $this->load->view('header', $data);
+        $this->load->view('menu', $data);
+        $this->load->view('admin/submenu',$data);
+        $this->load->view('members/list', array('members' => $members));
+        $this->load->view('footer', $data);
+    }
 }
 
