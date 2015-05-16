@@ -6,7 +6,7 @@ $this->lang->load('families');
 
 <div id="body">
 
-    <table class="family_data_table">
+    <table class="family_data_table data_table">
         <thead>
             <tr>
                 <th colspan="2"><?php echo $this->lang->line('families.view.data'); ?></th>

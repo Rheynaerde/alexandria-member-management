@@ -9,7 +9,7 @@ $this->lang->load('certificatetypes');
 
 <div id="body">
 
-    <table class="member_data_table">
+    <table class="member_data_table data_table">
         <thead>
             <tr>
                 <th colspan="2"><?php echo $this->lang->line('members.view.data'); ?></th>
