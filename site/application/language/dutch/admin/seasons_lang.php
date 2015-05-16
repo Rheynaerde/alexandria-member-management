@@ -23,6 +23,7 @@ $lang['admin/seasons.create.field.end'] = 'einde';
 
 $lang['admin/seasons.view.title'] = 'Seizoen: %1$s';
 $lang['admin/seasons.view.data'] = 'Gegevens';
+$lang['admin/seasons.view.members'] = 'Toon leden in dit seizoen';
 
 $lang['admin/seasons.properties.name'] = 'Naam';
 $lang['admin/seasons.properties.begin'] = 'Begin';
