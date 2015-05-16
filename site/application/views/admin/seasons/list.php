@@ -73,7 +73,7 @@ $this->lang->load('datepicker');
         <tbody>
 <?php foreach ($seasons as $season) { ?>
             <tr>
-                <td><?php echo $season->name; ?></td>
+                <td><a href="<?php echo site_url('admin/seasons/view/' . $season->id); ?>"><?php echo $season->name; ?></a></td>
                 <td><?php echo $season->begin; ?></td>
                 <td><?php echo $season->end; ?></td>
                 <td><?php echo $season->previous; ?></td>
