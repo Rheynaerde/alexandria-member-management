@@ -9,6 +9,9 @@ $lang['admin/seasons.overview.previous.minwidth'] = '80px';
 $lang['admin/seasons.overview.next.minwidth'] = '80px';
 $lang['admin/seasons.overview.new'] = 'New season';
 
+$lang['admin/seasons.overview.pdf.filename.prefix'] = 'member_overview_';
+$lang['admin/seasons.overview.pdf.header.format'] = 'Member overview for season %s: {PAGE_NUM}/{PAGE_COUNT}';
+
 $lang['admin/seasons.create.title'] = 'New season';
 $lang['admin/seasons.create.begin.placeholder'] = 'yyyy-mm-dd';
 $lang['admin/seasons.create.end.placeholder'] = 'yyyy-mm-dd';

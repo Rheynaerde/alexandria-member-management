@@ -9,6 +9,9 @@ $lang['admin/seasons.overview.previous.minwidth'] = '80px';
 $lang['admin/seasons.overview.next.minwidth'] = '80px';
 $lang['admin/seasons.overview.new'] = 'Nieuw seizoen';
 
+$lang['admin/seasons.overview.pdf.filename.prefix'] = 'ledenlijst_';
+$lang['admin/seasons.overview.pdf.header.format'] = 'Ledenlijst voor seizoen %s: {PAGE_NUM}/{PAGE_COUNT}';
+
 $lang['admin/seasons.create.title'] = 'Nieuw seizoen';
 $lang['admin/seasons.create.begin.placeholder'] = 'jjjj-mm-dd';
 $lang['admin/seasons.create.end.placeholder'] = 'jjjj-mm-dd';
