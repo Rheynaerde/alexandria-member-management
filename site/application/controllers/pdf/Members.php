@@ -18,8 +18,6 @@ class Members extends CI_Controller {
         $this->load->model('member_model');
         $this->lang->load('members');
         
-        $data['title'] = $this->lang->line('members.overview.title');
-        $data['sortable_tables'] = true;
         if($this->session->userdata('hasMemberManagementRights')) {
             $members = $this->member_model->all_members(false);
         } else {
