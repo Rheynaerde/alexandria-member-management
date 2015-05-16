@@ -11,6 +11,7 @@ class Seasons extends Admin_controller {
         $this->load->view('header',$data);
         $this->load->view('menu',$data);
         $this->load->view('admin/submenu',$data);
+        $this->load->view('admin/seasons/list_toolbar');
         $this->load->view('admin/seasons/list', 
                 array('seasons' => $this->season_model->get_seasons()));
         $this->load->view('footer',$data);

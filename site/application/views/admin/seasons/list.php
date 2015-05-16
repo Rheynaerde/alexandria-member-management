@@ -59,9 +59,6 @@ $this->lang->load('datepicker');
 </script>
 
 <div id="body">
-    <div class="actionbuttons">
-            <a href="<?php echo site_url('/admin/seasons/create'); ?>"><button type="button"><?php echo $this->lang->line('admin/seasons.overview.new'); ?></button></a>
-    </div>
     <table id="season_table" class="sortable">
         <thead>
             <th style="min-width: <?php echo $this->lang->line('admin/seasons.overview.name.minwidth'); ?>"><?php echo $this->lang->line('admin/seasons.properties.name'); ?></th>
