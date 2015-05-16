@@ -56,13 +56,13 @@ $this->lang->load('datepicker');
             <th style="min-width: <?php echo $this->lang->line('members.overview.hand.minwidth'); ?>" class="sorter-false filter-select"><?php echo $this->lang->line('members.properties.hand'); ?></th>
         </thead>
         <tbody>
-<?php foreach ($members as $row) { ?>
+<?php foreach ($members as $member) { ?>
             <tr>
-                <td><a href="<?php echo site_url('members/view/' . $row->id); ?>"><?php echo $row->lastName; ?></a></td>
-                <td><a href="<?php echo site_url('members/view/' . $row->id); ?>"><?php echo $row->firstName; ?></a></td>
-                <td><?php echo $row->birthdate; ?></td>
-                <td><?php echo $this->lang->line('members.properties.gender.' . $row->gender); ?></td>
-                <td><?php echo $this->lang->line('members.properties.hand.' . $row->hand); ?></td>
+                <td><a href="<?php echo site_url('members/view/' . $member->id); ?>"><?php echo $member->lastName; ?></a></td>
+                <td><a href="<?php echo site_url('members/view/' . $member->id); ?>"><?php echo $member->firstName; ?></a></td>
+                <td><?php echo $member->birthdate; ?></td>
+                <td><?php echo $this->lang->line('members.properties.gender.' . $member->gender); ?></td>
+                <td><?php echo $this->lang->line('members.properties.hand.' . $member->hand); ?></td>
             </tr>
 <?php } ?>
         </tbody>
