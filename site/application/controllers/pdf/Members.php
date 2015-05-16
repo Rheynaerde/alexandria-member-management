@@ -21,12 +21,12 @@ class Members extends CI_Controller {
         $data['title'] = $this->lang->line('members.overview.title');
         $data['sortable_tables'] = true;
         if($this->session->userdata('hasMemberManagementRights')) {
-            $query = $this->member_model->all_members(false);
+            $members = $this->member_model->all_members(false);
         } else {
-            $query = $this->member_model->user_members($this->session->userdata('id'), false);
+            $members = $this->member_model->user_members($this->session->userdata('id'), false);
         }
         
-        $html = $this->load->view('pdf/members/list', array('query' => $query), true);
+        $html = $this->load->view('pdf/members/list', array('members' => $members), true);
         
         pdf_create($html, $this->lang->line('members.overview.pdf.filename.prefix') . date($this->lang->line('members.overview.pdf.filename.dateformat')), true);
     }

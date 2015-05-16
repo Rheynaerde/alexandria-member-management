@@ -13,9 +13,7 @@ class Member_model extends CI_Model {
         $this->db->join('hand', 'hand.id=members.hand_id', 'left');
         $this->db->where('is_active', 1);
         $this->db->order_by('persons.lastName', 'ASC');
-        $result = $this->db->get();
-
-        return $result;
+        return $this->db->get()->result();
     }
 
     function all_members($only_names=true) {
@@ -32,9 +30,7 @@ class Member_model extends CI_Model {
             $this->db->join('hand', 'hand.id=members.hand_id', 'left');
         }
         $this->db->order_by('persons.lastName', 'ASC');
-        $result = $this->db->get();
-
-        return $result;
+        return $this->db->get()->result();
     }
     
     function user_members($user_id, $only_names=true) {
@@ -55,9 +51,7 @@ class Member_model extends CI_Model {
             $this->db->where('user_member.user_id', $user_id);
         }
         $this->db->order_by('persons.lastName', 'ASC');
-        $result = $this->db->get();
-
-        return $result;
+        return $this->db->get()->result();
     }
     
     function current_user_can_manage_member($member_id){

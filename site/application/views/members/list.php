@@ -56,7 +56,7 @@ $this->lang->load('datepicker');
             <th style="min-width: <?php echo $this->lang->line('members.overview.hand.minwidth'); ?>" class="sorter-false filter-select"><?php echo $this->lang->line('members.properties.hand'); ?></th>
         </thead>
         <tbody>
-<?php foreach ($query->result() as $row) { ?>
+<?php foreach ($members as $row) { ?>
             <tr>
                 <td><a href="<?php echo site_url('members/view/' . $row->id); ?>"><?php echo $row->lastName; ?></a></td>
                 <td><a href="<?php echo site_url('members/view/' . $row->id); ?>"><?php echo $row->firstName; ?></a></td>

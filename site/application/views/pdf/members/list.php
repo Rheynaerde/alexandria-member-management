@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </tr>
         </thead>
         <tbody>
-<?php foreach ($query->result() as $row) { ?>
+<?php foreach ($members as $row) { ?>
             <tr>
                 <td><?php echo $row->lastName; ?></td>
                 <td><?php echo $row->firstName; ?></td>
