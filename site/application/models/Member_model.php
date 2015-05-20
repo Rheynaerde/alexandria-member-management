@@ -5,7 +5,7 @@ class Member_model extends CI_Model {
 
     function get_active_members() {
         $this->db->from('members');
-        $this->db->select('members.id, persons.firstName, persons.lastName, persons.birthdate, members.federation_id');
+        $this->db->select('members.id, persons.firstName, persons.lastName, persons.familiar_name, persons.birthdate, members.federation_id');
         $this->db->select('gender.name as gender');
         $this->db->select('hand.name as hand');
         $this->db->join('persons', 'persons.id=members.person_id', 'left');
@@ -19,10 +19,10 @@ class Member_model extends CI_Model {
     function all_members($only_names=true) {
         $this->db->from('members');
         if($only_names){
-            $this->db->select('members.id, persons.firstName, persons.lastName');
+            $this->db->select('members.id, persons.firstName, persons.lastName, persons.familiar_name');
             $this->db->join('persons', 'persons.id=members.person_id', 'left');
         } else {
-            $this->db->select('members.id, persons.firstName, persons.lastName, persons.birthdate, members.federation_id');
+            $this->db->select('members.id, persons.firstName, persons.lastName, persons.familiar_name, persons.birthdate, members.federation_id');
             $this->db->select('gender.name as gender');
             $this->db->select('hand.name as hand');
             $this->db->join('persons', 'persons.id=members.person_id', 'left');
@@ -36,12 +36,12 @@ class Member_model extends CI_Model {
     function user_members($user_id, $only_names=true) {
         $this->db->from('members');
         if($only_names){
-            $this->db->select('members.id, persons.firstName, persons.lastName');
+            $this->db->select('members.id, persons.firstName, persons.lastName, persons.familiar_name');
             $this->db->join('persons', 'persons.id=members.person_id', 'left');
             $this->db->join('user_member', 'user_member.member_id=members.id', 'left');
             $this->db->where('user_member.user_id', $user_id);
         } else {
-            $this->db->select('members.id, persons.firstName, persons.lastName, persons.birthdate, members.federation_id');
+            $this->db->select('members.id, persons.firstName, persons.lastName, persons.familiar_name, persons.birthdate, members.federation_id');
             $this->db->select('gender.name as gender');
             $this->db->select('hand.name as hand');
             $this->db->join('persons', 'persons.id=members.person_id', 'left');
@@ -74,7 +74,7 @@ class Member_model extends CI_Model {
     
     function get_member($member_id){
         $this->db->from('members');
-        $this->db->select('members.id, persons.firstName, persons.lastName, persons.birthdate, members.federation_id');
+        $this->db->select('members.id, persons.firstName, persons.lastName, persons.familiar_name, persons.birthdate, members.federation_id');
         $this->db->select('gender.name as gender');
         $this->db->select('hand.name as hand');
         $this->db->join('persons', 'persons.id=members.person_id', 'left');
@@ -103,7 +103,7 @@ class Member_model extends CI_Model {
     
     function get_members_for_family($family_id) {
         $this->db->from('members');
-        $this->db->select('`members`.`id`, `firstName`, `lastName`, IF(`user_member`.`id` IS NULL, 0, 1) AS can_manage', false);
+        $this->db->select('`members`.`id`, `firstName`, `lastName`, `familiar_name`, IF(`user_member`.`id` IS NULL, 0, 1) AS can_manage', false);
         $this->db->join('persons', 'persons.id=members.person_id', 'left');
         $this->db->join('family_member', 'family_member.member_id=members.id', 'left');
         $this->db->join('user_member', 'members.id=user_member.member_id and user_id=' . $this->session->userdata('id'), 'left');
@@ -113,7 +113,7 @@ class Member_model extends CI_Model {
     
     function get_members_for_season($season_id) {
         $this->db->from('members as m');
-        $this->db->select('m.id, p.firstName, p.lastName, p.birthdate, m.federation_id');
+        $this->db->select('m.id, p.firstName, p.lastName, p.familiar_name, p.birthdate, m.federation_id');
         $this->db->select('g.name as gender');
         $this->db->select('h.name as hand');
         $this->db->join('persons as p', 'p.id=m.person_id', 'left');

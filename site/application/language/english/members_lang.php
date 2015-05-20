@@ -32,6 +32,7 @@ $lang['members.view.certificates.dateformat.period'] = 'From %1$s until %2$s';
 
 $lang['members.properties.lastname'] = 'Last name';
 $lang['members.properties.firstname'] = 'First name';
+$lang['members.properties.familiarname'] = 'Familiar name';
 $lang['members.properties.birthdate'] = 'Birthdate';
 $lang['members.properties.gender'] = 'Gender';
 $lang['members.properties.gender.male'] = 'Man';

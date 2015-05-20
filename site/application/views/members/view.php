@@ -25,6 +25,16 @@ $this->lang->load('certificatetypes');
                 <td><?php echo $member->firstName; ?></td>
             </tr>
             <tr>
+                <td class="property"><?php echo $this->lang->line('members.properties.familiarname'); ?></td>
+                <td><?php 
+                if(isset($member->familiar_name)){
+                    echo $member->familiar_name;
+                } else {
+                    echo $member->firstName;
+                }
+                ?></td>
+            </tr>
+            <tr>
                 <td class="property"><?php echo $this->lang->line('members.properties.birthdate'); ?></td>
                 <td><?php echo $member->birthdate; ?></td>
             </tr>
