@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS `persons` (
   `id` int(11) unsigned NOT NULL,
   `firstName` varchar(45) DEFAULT NULL,
   `lastName` varchar(45) DEFAULT NULL,
+  `familiar_name` varchar(45) DEFAULT NULL,
   `birthdate` date DEFAULT NULL,
   `gender_id` int(11) NOT NULL,
   `isNaturalPerson` tinyint(1) NOT NULL DEFAULT '1'
