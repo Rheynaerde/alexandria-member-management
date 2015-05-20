@@ -64,6 +64,31 @@ $this->lang->load('certificatetypes');
                 ?></td>
             </tr>
             <tr>
+                <td class="property"><?php echo $this->lang->line('members.properties.telephonenumber'); ?></td>
+                <td><?php
+                $is_first = true;
+                foreach ($telephonenumbers as $telephonenumber) {
+                    if(!$is_first){
+                        ?>, <?php
+                    }
+                    $is_first = false;
+                    if($telephonenumber->isActive){
+                        echo $telephonenumber->telephone_number;
+                    } else {
+                        ?><span class="inactivephone"><?php
+                        echo $telephonenumber->telephone_number;
+                        ?></span><?php
+                    }
+                    
+                    if(isset($telephonenumber->comment)){
+                        ?> (<?php
+                        echo $telephonenumber->comment;
+                        ?>)<?php
+                    }
+                }
+                ?></td>
+            </tr>
+            <tr>
                 <td class="property"><?php echo $this->lang->line('members.properties.mailaddress'); ?></td>
                 <td><?php
                 $is_first = true;

@@ -25,5 +25,15 @@ class Person_model extends CI_Model {
 
         return $result;
     }
+    
+    function get_telephone_numbers($person_id) {
+        $this->db->from('person_telephone_number');
+        $this->db->select('telephone_number, comment, isActive');
+        $this->db->join('telephone_numbers', 'telephone_numbers.id=telephone_number_id', 'left');
+        $this->db->where('person_id', $person_id);
+        $result = $this->db->get()->result();
+
+        return $result;
+    }
 
 }

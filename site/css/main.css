@@ -178,3 +178,7 @@ table.data_table thead:not(:first-child) tr th {
 .inactivemail {
     text-decoration: line-through;
 }
+
+.inactivephone {
+    text-decoration: line-through;
+}

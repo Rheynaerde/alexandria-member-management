@@ -37,6 +37,7 @@ class Members extends MY_Controller {
                 $member = $this->member_model->get_member($member_id);
                 $addresses = $this->person_model->get_addresses($this->member_model->get_person_id($member_id));
                 $mailaddresses = $this->person_model->get_mail_addresses($this->member_model->get_person_id($member_id));
+                $telephonenumbers = $this->person_model->get_telephone_numbers($this->member_model->get_person_id($member_id));
                 $families = $this->family_model->get_all_families_for_member($member_id);
                 $memberships = $this->membership_model->get_memberships_for_member($member_id);
                 $certificates = $this->certificate_model->get_certificates_for_member($member_id);
@@ -49,6 +50,7 @@ class Members extends MY_Controller {
                     'member' => $member,
                     'addresses' => $addresses,
                     'mailaddresses' => $mailaddresses,
+                    'telephonenumbers' => $telephonenumbers,
                     'families' => $families,
                     'memberships' => $memberships,
                     'certificates' => $certificates));
