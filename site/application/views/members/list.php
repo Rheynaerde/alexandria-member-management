@@ -58,8 +58,8 @@ $this->lang->load('datepicker');
         <tbody>
 <?php foreach ($members as $member) { ?>
             <tr>
-                <td><a href="<?php echo site_url('members/view/' . $member->id); ?>"><?php echo $member->lastName; ?></a></td>
-                <td><a href="<?php echo site_url('members/view/' . $member->id); ?>"><?php echo $member->firstName; ?></a></td>
+                <td><a href="<?php echo site_url('members/view/' . $member->id); ?>"><?php echo $member->last_name; ?></a></td>
+                <td><a href="<?php echo site_url('members/view/' . $member->id); ?>"><?php echo $member->first_name; ?></a></td>
                 <td><?php echo $member->birthdate; ?></td>
                 <td><?php echo $member->age; ?></td>
                 <td><?php echo $this->lang->line('members.properties.gender.' . $member->gender); ?></td>

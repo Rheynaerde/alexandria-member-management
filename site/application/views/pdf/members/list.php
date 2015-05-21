@@ -34,8 +34,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <tbody>
 <?php foreach ($members as $member) { ?>
             <tr>
-                <td><?php echo $member->lastName; ?></td>
-                <td><?php echo $member->firstName; ?></td>
+                <td><?php echo $member->last_name; ?></td>
+                <td><?php echo $member->first_name; ?></td>
                 <td><?php echo $member->birthdate; ?></td>
                 <td><?php echo $this->lang->line('members.properties.gender.' . $member->gender); ?></td>
                 <td><?php echo $this->lang->line('members.properties.hand.' . $member->hand); ?></td>

@@ -37,11 +37,11 @@ $this->lang->load('families');
                     if($this->session->userdata('has_member_management_rights') || $member->can_manage){
                         ?><a href="<?php echo site_url('members/view/' . $member->id); ?>"><?php
                         echo sprintf($this->lang->line('families.view.member.format'),
-                            $member->firstName, $member->lastName);
+                            $member->first_name, $member->last_name);
                         ?></a><?php
                     } else {
                         echo sprintf($this->lang->line('families.view.member.format'),
-                            $member->firstName, $member->lastName);
+                            $member->first_name, $member->last_name);
                     } ?>
                 </td>
             </tr>

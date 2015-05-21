@@ -2,7 +2,7 @@
 -- Just some randomly generated persons/members for testing-purposes.
 -- 
 
-INSERT INTO `persons` (`firstName`, `lastName`, `birthdate`, `gender_id`) VALUES
+INSERT INTO `persons` (`first_name`, `last_name`, `birthdate`, `gender_id`) VALUES
   ('Radouane', 'De Rijck', '1956-04-25', '1'),
   ('Samia', 'Aerts', '1952-05-26', '2'),
   ('Gaby', 'Pelleriaux', '1947-08-27', '1'),

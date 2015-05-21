@@ -43,7 +43,7 @@ class Members extends MY_Controller {
                 $certificates = $this->certificate_model->get_certificates_for_member($member_id);
                 $data['title'] = sprintf(
                         $this->lang->line('members.view.title'),
-                        $member->firstName, $member->lastName);
+                        $member->first_name, $member->last_name);
                 $this->load->view('header', $data);
                 $this->load->view('menu', $data);
                 $this->load->view('members/view', array(

@@ -5,7 +5,7 @@ class Member_model extends CI_Model {
 
     function get_active_members() {
         $this->db->from('members');
-        $this->db->select('members.id, persons.firstName, persons.lastName, persons.familiar_name, persons.birthdate, members.federation_id');
+        $this->db->select('members.id, persons.first_name, persons.last_name, persons.familiar_name, persons.birthdate, members.federation_id');
         $this->db->select('TIMESTAMPDIFF(YEAR,persons.birthdate,CURDATE()) as age', false);
         $this->db->select('gender.name as gender');
         $this->db->select('hand.name as hand');
@@ -13,17 +13,17 @@ class Member_model extends CI_Model {
         $this->db->join('gender', 'gender.id=persons.gender_id', 'left');
         $this->db->join('hand', 'hand.id=members.hand_id', 'left');
         $this->db->where('is_active', 1);
-        $this->db->order_by('persons.lastName', 'ASC');
+        $this->db->order_by('persons.last_name', 'ASC');
         return $this->db->get()->result();
     }
 
     function all_members($only_names=true) {
         $this->db->from('members');
         if($only_names){
-            $this->db->select('members.id, persons.firstName, persons.lastName, persons.familiar_name');
+            $this->db->select('members.id, persons.first_name, persons.last_name, persons.familiar_name');
             $this->db->join('persons', 'persons.id=members.person_id', 'left');
         } else {
-            $this->db->select('members.id, persons.firstName, persons.lastName, persons.familiar_name, persons.birthdate, members.federation_id');
+            $this->db->select('members.id, persons.first_name, persons.last_name, persons.familiar_name, persons.birthdate, members.federation_id');
             $this->db->select('TIMESTAMPDIFF(YEAR,persons.birthdate,CURDATE()) as age', false);
             $this->db->select('gender.name as gender');
             $this->db->select('hand.name as hand');
@@ -31,19 +31,19 @@ class Member_model extends CI_Model {
             $this->db->join('gender', 'gender.id=persons.gender_id', 'left');
             $this->db->join('hand', 'hand.id=members.hand_id', 'left');
         }
-        $this->db->order_by('persons.lastName', 'ASC');
+        $this->db->order_by('persons.last_name', 'ASC');
         return $this->db->get()->result();
     }
     
     function user_members($user_id, $only_names=true) {
         $this->db->from('members');
         if($only_names){
-            $this->db->select('members.id, persons.firstName, persons.lastName, persons.familiar_name');
+            $this->db->select('members.id, persons.first_name, persons.last_name, persons.familiar_name');
             $this->db->join('persons', 'persons.id=members.person_id', 'left');
             $this->db->join('user_member', 'user_member.member_id=members.id', 'left');
             $this->db->where('user_member.user_id', $user_id);
         } else {
-            $this->db->select('members.id, persons.firstName, persons.lastName, persons.familiar_name, persons.birthdate, members.federation_id');
+            $this->db->select('members.id, persons.first_name, persons.last_name, persons.familiar_name, persons.birthdate, members.federation_id');
             $this->db->select('TIMESTAMPDIFF(YEAR,persons.birthdate,CURDATE()) as age', false);
             $this->db->select('gender.name as gender');
             $this->db->select('hand.name as hand');
@@ -53,7 +53,7 @@ class Member_model extends CI_Model {
             $this->db->join('user_member', 'user_member.member_id=members.id', 'left');
             $this->db->where('user_member.user_id', $user_id);
         }
-        $this->db->order_by('persons.lastName', 'ASC');
+        $this->db->order_by('persons.last_name', 'ASC');
         return $this->db->get()->result();
     }
     
@@ -77,7 +77,7 @@ class Member_model extends CI_Model {
     
     function get_member($member_id){
         $this->db->from('members');
-        $this->db->select('members.id, persons.firstName, persons.lastName, persons.familiar_name, persons.birthdate, members.federation_id');
+        $this->db->select('members.id, persons.first_name, persons.last_name, persons.familiar_name, persons.birthdate, members.federation_id');
         $this->db->select('TIMESTAMPDIFF(YEAR,persons.birthdate,CURDATE()) as age', false);
         $this->db->select('gender.name as gender');
         $this->db->select('hand.name as hand');
@@ -107,7 +107,7 @@ class Member_model extends CI_Model {
     
     function get_members_for_family($family_id) {
         $this->db->from('members');
-        $this->db->select('`members`.`id`, `firstName`, `lastName`, `familiar_name`, IF(`user_member`.`id` IS NULL, 0, 1) AS can_manage', false);
+        $this->db->select('`members`.`id`, `first_name`, `last_name`, `familiar_name`, IF(`user_member`.`id` IS NULL, 0, 1) AS can_manage', false);
         $this->db->join('persons', 'persons.id=members.person_id', 'left');
         $this->db->join('family_member', 'family_member.member_id=members.id', 'left');
         $this->db->join('user_member', 'members.id=user_member.member_id and user_id=' . $this->session->userdata('id'), 'left');
@@ -117,7 +117,7 @@ class Member_model extends CI_Model {
     
     function get_members_for_season($season_id) {
         $this->db->from('members as m');
-        $this->db->select('m.id, p.firstName, p.lastName, p.familiar_name, p.birthdate, m.federation_id');
+        $this->db->select('m.id, p.first_name, p.last_name, p.familiar_name, p.birthdate, m.federation_id');
         $this->db->select('TIMESTAMPDIFF(YEAR,p.birthdate,CURDATE()) as age', false);
         $this->db->select('g.name as gender');
         $this->db->select('h.name as hand');

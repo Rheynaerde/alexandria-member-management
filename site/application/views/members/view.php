@@ -18,11 +18,11 @@ $this->lang->load('certificatetypes');
         <tbody>
             <tr>
                 <td class="property"><?php echo $this->lang->line('members.properties.lastname'); ?></td>
-                <td><?php echo $member->lastName; ?></td>
+                <td><?php echo $member->last_name; ?></td>
             </tr>
             <tr>
                 <td class="property"><?php echo $this->lang->line('members.properties.firstname'); ?></td>
-                <td><?php echo $member->firstName; ?></td>
+                <td><?php echo $member->first_name; ?></td>
             </tr>
             <tr>
                 <td class="property"><?php echo $this->lang->line('members.properties.familiarname'); ?></td>
@@ -30,7 +30,7 @@ $this->lang->load('certificatetypes');
                 if(isset($member->familiar_name)){
                     echo $member->familiar_name;
                 } else {
-                    echo $member->firstName;
+                    echo $member->first_name;
                 }
                 ?></td>
             </tr>
