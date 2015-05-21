@@ -3,7 +3,7 @@
 class Login extends CI_Controller {
 
     function index() {
-        if( $this->session->userdata('isLoggedIn') ) {
+        if( $this->session->userdata('is_logged_in') ) {
             // If the user is already logged in
             redirect('/main/welcome');
         } else {

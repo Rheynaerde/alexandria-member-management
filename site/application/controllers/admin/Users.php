@@ -21,7 +21,7 @@ class Users extends Admin_controller {
         $this->user_model->set_management_rights($user_id, 0);
         $user = $this->user_model->get_user($user_id);
         $this->load->view('admin/users/management_rights',
-                array('rights' => $user->hasMemberManagementRights, 'id' => $user_id));
+                array('rights' => $user->has_member_management_rights, 'id' => $user_id));
     }
 
     function add_management($user_id){
@@ -29,7 +29,7 @@ class Users extends Admin_controller {
         $this->user_model->set_management_rights($user_id, 1);
         $user = $this->user_model->get_user($user_id);
         $this->load->view('admin/users/management_rights',
-                array('rights' => $user->hasMemberManagementRights, 'id' => $user_id));
+                array('rights' => $user->has_member_management_rights, 'id' => $user_id));
     }
 
     function remove_admin($user_id){
@@ -37,7 +37,7 @@ class Users extends Admin_controller {
         $this->user_model->set_admin($user_id, 0);
         $user = $this->user_model->get_user($user_id);
         $this->load->view('admin/users/admin_rights',
-                array('rights' => $user->isAdmin, 'id' => $user_id));
+                array('rights' => $user->is_admin, 'id' => $user_id));
     }
 
     function add_admin($user_id){
@@ -45,7 +45,7 @@ class Users extends Admin_controller {
         $this->user_model->set_admin($user_id, 1);
         $user = $this->user_model->get_user($user_id);
         $this->load->view('admin/users/admin_rights',
-                array('rights' => $user->isAdmin, 'id' => $user_id));
+                array('rights' => $user->is_admin, 'id' => $user_id));
     }
 
     function deactivate($user_id){
@@ -53,7 +53,7 @@ class Users extends Admin_controller {
         $this->user_model->set_active($user_id, 0);
         $user = $this->user_model->get_user($user_id);
         $this->load->view('admin/users/activate',
-                array('state' => $user->isActive, 'id' => $user_id));
+                array('state' => $user->is_active, 'id' => $user_id));
     }
 
     function activate($user_id){
@@ -61,7 +61,7 @@ class Users extends Admin_controller {
         $this->user_model->set_active($user_id, 1);
         $user = $this->user_model->get_user($user_id);
         $this->load->view('admin/users/activate',
-                array('state' => $user->isActive, 'id' => $user_id));
+                array('state' => $user->is_active, 'id' => $user_id));
     }
 }
 

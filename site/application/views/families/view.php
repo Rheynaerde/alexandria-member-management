@@ -34,7 +34,7 @@ $this->lang->load('families');
             <tr>
                 <td colspan="2">
                     <?php 
-                    if($this->session->userdata('hasMemberManagementRights') || $member->can_manage){
+                    if($this->session->userdata('has_member_management_rights') || $member->can_manage){
                         ?><a href="<?php echo site_url('members/view/' . $member->id); ?>"><?php
                         echo sprintf($this->lang->line('families.view.member.format'),
                             $member->firstName, $member->lastName);

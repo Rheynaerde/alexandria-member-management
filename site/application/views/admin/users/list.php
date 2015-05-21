@@ -41,25 +41,25 @@ $this->lang->load('sortabletable');
 <?php foreach ($query->result() as $row) { ?>
             <tr>
                 <td><?php echo $row->username; ?></td>
-                <td><?php echo $row->lastName; ?></td>
-                <td><?php echo $row->firstName; ?></td>
+                <td><?php echo $row->last_name; ?></td>
+                <td><?php echo $row->first_name; ?></td>
                 <td><?php echo $row->email; ?></td>
                 <td class="action">
                     <div id="mr_<?php echo $row->id; ?>"><?php 
                     $this->view('admin/users/management_rights', array(
-                        'rights' => $row->hasMemberManagementRights,
+                        'rights' => $row->has_member_management_rights,
                         'id' => $row->id)); ?></div>
                 </td>
                 <td class="action">
                     <div id="ar_<?php echo $row->id; ?>"><?php 
                     $this->view('admin/users/admin_rights', array(
-                        'rights' => $row->isAdmin,
+                        'rights' => $row->is_admin,
                         'id' => $row->id)); ?></div>
                 </td>
                 <td class="action">
                     <div id="act_<?php echo $row->id; ?>"><?php 
                     $this->view('admin/users/activate', array(
-                        'state' => $row->isActive,
+                        'state' => $row->is_active,
                         'id' => $row->id)); ?></div>
                 </td>
             </tr>

@@ -9,7 +9,7 @@ class User_model extends CI_Model {
         // Retrieve the users which match the given username and password combination
         $this->db->from('users');
         $this->db->where('username', $username);
-        $this->db->where('isActive', 1);
+        $this->db->where('is_active', 1);
         $this->db->where('password', sha1($password));
         $result = $this->db->get()->result();
 
@@ -28,12 +28,12 @@ class User_model extends CI_Model {
     function set_session() {
         $this->session->set_userdata( array(
                 'id'=>$this->details->id,
-                'uiname'=> $this->details->firstName . ' ' . $this->details->lastName,
+                'uiname'=> $this->details->first_name . ' ' . $this->details->last_name,
                 'email'=>$this->details->email,
                 'username'=>$this->details->username,
-                'isAdmin'=>$this->details->isAdmin,
-                'hasMemberManagementRights'=>$this->details->hasMemberManagementRights,
-                'isLoggedIn'=>true
+                'is_admin'=>$this->details->is_admin,
+                'has_member_management_rights'=>$this->details->has_member_management_rights,
+                'is_logged_in'=>true
             )
         );
     }
@@ -47,11 +47,11 @@ class User_model extends CI_Model {
         //prepare data for creation of season
         $data['username'] = $username;
         $data['password'] = sha1($password);
-        $data['firstName'] = $first_name;
-        $data['lastName'] = $last_name;
+        $data['first_name'] = $first_name;
+        $data['last_name'] = $last_name;
         $data['email'] = $email;
-        $data['isAdmin'] = $is_admin ? 1 : 0;
-        $data['hasMemberManagementRights'] = $has_management_rights ? 1 : 0;
+        $data['is_admin'] = $is_admin ? 1 : 0;
+        $data['has_member_management_rights'] = $has_management_rights ? 1 : 0;
 
         //create user in database
         $this->db->trans_start();
@@ -89,9 +89,9 @@ class User_model extends CI_Model {
     
     function all_users($only_active=true) {
         $this->db->from('users');
-        $this->db->select('id, username, firstName, lastName, email, isAdmin, hasMemberManagementRights, isActive');
+        $this->db->select('id, username, first_name, last_name, email, is_admin, has_member_management_rights, is_active');
         if($only_active){
-            $this->db->where('isActive', 1);
+            $this->db->where('is_active', 1);
         }
         $this->db->order_by('username', 'ASC');
         $result = $this->db->get();
@@ -101,7 +101,7 @@ class User_model extends CI_Model {
     
     function get_user($user_id) {
         $this->db->from('users');
-        $this->db->select('id, username, firstName, lastName, email, isAdmin, hasMemberManagementRights, isActive');
+        $this->db->select('id, username, first_name, last_name, email, is_admin, has_member_management_rights, is_active');
         $this->db->where('id', $user_id);
         $result = $this->db->get()->result();
         if(is_array($result) && count($result) == 1){
@@ -113,17 +113,17 @@ class User_model extends CI_Model {
     
     function set_management_rights($user_id, $rights){
         $this->db->where('id', $user_id);
-        $this->db->update('users', array('hasMemberManagementRights' => (int)$rights));
+        $this->db->update('users', array('has_member_management_rights' => (int)$rights));
     }
     
     function set_admin($user_id, $is_admin){
         $this->db->where('id', $user_id);
-        $this->db->update('users', array('isAdmin' => (int)$is_admin));
+        $this->db->update('users', array('is_admin' => (int)$is_admin));
     }
 
     function set_active($user_id, $is_active){
         $this->db->where('id', $user_id);
-        $this->db->update('users', array('isActive' => (int)$is_active));
+        $this->db->update('users', array('is_active' => (int)$is_active));
     }
 }
 

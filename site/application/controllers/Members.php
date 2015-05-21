@@ -12,7 +12,7 @@ class Members extends MY_Controller {
         
         $data['title'] = $this->lang->line('members.overview.title');
         $data['sortable_tables'] = true;
-        if($this->session->userdata('hasMemberManagementRights')) {
+        if($this->session->userdata('has_member_management_rights')) {
             $members = $this->member_model->get_active_members();
         } else {
             $members = $this->member_model->user_members($this->session->userdata('id'), false);

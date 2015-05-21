@@ -169,7 +169,7 @@ INSERT INTO `members` (`person_id`, `federation_id`, `hand_id`) VALUES
 --
 -- Create some users. Only use this for local testing.
 --
-INSERT INTO `users` (`email`, `firstName`, `lastName`, `username`, `password`, `isAdmin`, `hasMemberManagementRights`) VALUES
+INSERT INTO `users` (`email`, `first_name`, `last_name`, `username`, `password`, `is_admin`, `has_member_management_rights`) VALUES
   ('test@domain.com', 'Test', 'User', 'test1', SHA1('password'), '1', '1'),
   ('test@domain.com', 'Test', 'User', 'test2', SHA1('password'), '0', '1'),
   ('test@domain.com', 'Test', 'User', 'test3', SHA1('password'), '0', '0');

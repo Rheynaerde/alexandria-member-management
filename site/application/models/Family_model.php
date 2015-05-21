@@ -29,7 +29,7 @@ class Family_model extends CI_Model {
     }
     
     function current_user_can_manage_family($family_id){
-        if($this->session->userdata('hasMemberManagementRights')){
+        if($this->session->userdata('has_member_management_rights')){
             return true;
         } else {
             $this->db->from('user_family');

@@ -12,7 +12,7 @@ class Families extends MY_Controller {
         
         $data['title'] = $this->lang->line('families.overview.title');
         $data['sortable_tables'] = true;
-        if($this->session->userdata('hasMemberManagementRights')) {
+        if($this->session->userdata('has_member_management_rights')) {
             $families = $this->family_model->get_all_families();
         } else {
             $families = $this->family_model->get_all_families_manageable_by_user($this->session->userdata('id'));

@@ -134,7 +134,7 @@ $this->lang->load('certificatetypes');
                         ?>, <?php
                     }
                     $is_first = false;
-                    if($this->session->userdata('hasMemberManagementRights') || $family->can_manage){
+                    if($this->session->userdata('has_member_management_rights') || $family->can_manage){
                         ?><a href="<?php echo site_url('families/view/' . $family->id); ?>"><?php
                         echo $family->name;
                         ?></a><?php
