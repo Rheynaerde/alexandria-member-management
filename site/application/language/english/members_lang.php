@@ -6,6 +6,7 @@ $lang['members.overview.download'] = 'Download overview as PDF';
 $lang['members.overview.lastname.minwidth'] = '120px';
 $lang['members.overview.firstname.minwidth'] = '120px';
 $lang['members.overview.birthdate.minwidth'] = '120px';
+$lang['members.overview.age.minwidth'] = '100px';
 $lang['members.overview.gender.minwidth'] = '100px';
 $lang['members.overview.hand.minwidth'] = '100px';
 
@@ -34,6 +35,7 @@ $lang['members.properties.lastname'] = 'Last name';
 $lang['members.properties.firstname'] = 'First name';
 $lang['members.properties.familiarname'] = 'Familiar name';
 $lang['members.properties.birthdate'] = 'Birthdate';
+$lang['members.properties.age'] = 'Age';
 $lang['members.properties.gender'] = 'Gender';
 $lang['members.properties.gender.male'] = 'Man';
 $lang['members.properties.gender.female'] = 'Woman';

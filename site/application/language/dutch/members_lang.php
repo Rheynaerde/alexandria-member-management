@@ -6,6 +6,7 @@ $lang['members.overview.download'] = 'Download lijst als PDF';
 $lang['members.overview.lastname.minwidth'] = '120px';
 $lang['members.overview.firstname.minwidth'] = '120px';
 $lang['members.overview.birthdate.minwidth'] = '120px';
+$lang['members.overview.age.minwidth'] = '100px';
 $lang['members.overview.gender.minwidth'] = '100px';
 $lang['members.overview.hand.minwidth'] = '100px';
 
@@ -34,6 +35,7 @@ $lang['members.properties.lastname'] = 'Familienaam';
 $lang['members.properties.firstname'] = 'Voornaam';
 $lang['members.properties.familiarname'] = 'Roepnaam';
 $lang['members.properties.birthdate'] = 'Geboortedatum';
+$lang['members.properties.age'] = 'Leeftijd';
 $lang['members.properties.gender'] = 'Geslacht';
 $lang['members.properties.gender.male'] = 'Man';
 $lang['members.properties.gender.female'] = 'Vrouw';

@@ -51,6 +51,7 @@ $this->lang->load('datepicker');
             <th style="min-width: <?php echo $this->lang->line('members.overview.lastname.minwidth'); ?>"><?php echo $this->lang->line('members.properties.lastname'); ?></th>
             <th style="min-width: <?php echo $this->lang->line('members.overview.firstname.minwidth'); ?>"><?php echo $this->lang->line('members.properties.firstname'); ?></th>
             <th style="min-width: <?php echo $this->lang->line('members.overview.birthdate.minwidth'); ?>"><?php echo $this->lang->line('members.properties.birthdate'); ?></th>
+            <th style="min-width: <?php echo $this->lang->line('members.overview.age.minwidth'); ?>"><?php echo $this->lang->line('members.properties.age'); ?></th>
             <th style="min-width: <?php echo $this->lang->line('members.overview.gender.minwidth'); ?>" class="sorter-false filter-select"><?php echo $this->lang->line('members.properties.gender'); ?></th>
             <th style="min-width: <?php echo $this->lang->line('members.overview.hand.minwidth'); ?>" class="sorter-false filter-select"><?php echo $this->lang->line('members.properties.hand'); ?></th>
         </thead>
@@ -60,6 +61,7 @@ $this->lang->load('datepicker');
                 <td><a href="<?php echo site_url('members/view/' . $member->id); ?>"><?php echo $member->lastName; ?></a></td>
                 <td><a href="<?php echo site_url('members/view/' . $member->id); ?>"><?php echo $member->firstName; ?></a></td>
                 <td><?php echo $member->birthdate; ?></td>
+                <td><?php echo $member->age; ?></td>
                 <td><?php echo $this->lang->line('members.properties.gender.' . $member->gender); ?></td>
                 <td><?php echo $this->lang->line('members.properties.hand.' . $member->hand); ?></td>
             </tr>
