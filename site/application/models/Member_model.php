@@ -6,6 +6,7 @@ class Member_model extends CI_Model {
     function get_active_members() {
         $this->db->from('members');
         $this->db->select('members.id, persons.firstName, persons.lastName, persons.familiar_name, persons.birthdate, members.federation_id');
+        $this->db->select('TIMESTAMPDIFF(YEAR,persons.birthdate,CURDATE()) as age', false);
         $this->db->select('gender.name as gender');
         $this->db->select('hand.name as hand');
         $this->db->join('persons', 'persons.id=members.person_id', 'left');
@@ -23,6 +24,7 @@ class Member_model extends CI_Model {
             $this->db->join('persons', 'persons.id=members.person_id', 'left');
         } else {
             $this->db->select('members.id, persons.firstName, persons.lastName, persons.familiar_name, persons.birthdate, members.federation_id');
+            $this->db->select('TIMESTAMPDIFF(YEAR,persons.birthdate,CURDATE()) as age', false);
             $this->db->select('gender.name as gender');
             $this->db->select('hand.name as hand');
             $this->db->join('persons', 'persons.id=members.person_id', 'left');
@@ -42,6 +44,7 @@ class Member_model extends CI_Model {
             $this->db->where('user_member.user_id', $user_id);
         } else {
             $this->db->select('members.id, persons.firstName, persons.lastName, persons.familiar_name, persons.birthdate, members.federation_id');
+            $this->db->select('TIMESTAMPDIFF(YEAR,persons.birthdate,CURDATE()) as age', false);
             $this->db->select('gender.name as gender');
             $this->db->select('hand.name as hand');
             $this->db->join('persons', 'persons.id=members.person_id', 'left');
@@ -75,6 +78,7 @@ class Member_model extends CI_Model {
     function get_member($member_id){
         $this->db->from('members');
         $this->db->select('members.id, persons.firstName, persons.lastName, persons.familiar_name, persons.birthdate, members.federation_id');
+        $this->db->select('TIMESTAMPDIFF(YEAR,persons.birthdate,CURDATE()) as age', false);
         $this->db->select('gender.name as gender');
         $this->db->select('hand.name as hand');
         $this->db->join('persons', 'persons.id=members.person_id', 'left');
@@ -114,6 +118,7 @@ class Member_model extends CI_Model {
     function get_members_for_season($season_id) {
         $this->db->from('members as m');
         $this->db->select('m.id, p.firstName, p.lastName, p.familiar_name, p.birthdate, m.federation_id');
+        $this->db->select('TIMESTAMPDIFF(YEAR,p.birthdate,CURDATE()) as age', false);
         $this->db->select('g.name as gender');
         $this->db->select('h.name as hand');
         $this->db->join('persons as p', 'p.id=m.person_id', 'left');
