@@ -19,6 +19,7 @@ $lang['members.view.title'] = 'Lid: %1$s %2$s';
 $lang['members.view.403.title'] = 'Fout';
 $lang['members.view.403.message'] = 'Je bent niet gemachtigd om deze gebruiker te bekijken.';
 $lang['members.view.data'] = 'Gegevens';
+$lang['members.view.age.format'] = '%s jaar';
 $lang['members.view.address.format.nobox'] = '%1$s %2$s';
 $lang['members.view.address.format.withbox'] = '%1$s %2$s bus %3$s';
 $lang['members.view.address.format.city'] = '%1$s %2$s';

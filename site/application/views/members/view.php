@@ -36,7 +36,7 @@ $this->lang->load('certificatetypes');
             </tr>
             <tr>
                 <td class="property"><?php echo $this->lang->line('members.properties.birthdate'); ?></td>
-                <td><?php echo $member->birthdate; ?></td>
+                <td><?php echo $member->birthdate; ?> (<?php echo sprintf($this->lang->line('members.view.age.format'), $member->age); ?>)</td>
             </tr>
             <tr>
                 <td class="property"><?php echo $this->lang->line('members.properties.gender'); ?></td>

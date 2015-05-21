@@ -19,6 +19,7 @@ $lang['members.view.title'] = 'Member: %1$s %2$s';
 $lang['members.view.403.title'] = 'Error';
 $lang['members.view.403.message'] = 'You are not authorized to view this user.';
 $lang['members.view.data'] = 'Data';
+$lang['members.view.age.format'] = '%s year';
 $lang['members.view.address.format.nobox'] = '%2$s %1$s';
 $lang['members.view.address.format.withbox'] = '%2$s %1$s, box %3$s';
 $lang['members.view.address.format.city'] = '%1$s %2$s';
