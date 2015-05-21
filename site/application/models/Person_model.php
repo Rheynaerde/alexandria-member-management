@@ -18,7 +18,7 @@ class Person_model extends CI_Model {
     
     function get_mail_addresses($person_id) {
         $this->db->from('person_mailaddress');
-        $this->db->select('mailaddress, comment, isActive');
+        $this->db->select('mailaddress, comment, is_active');
         $this->db->join('mailaddresses', 'mailaddresses.id=mailaddress_id', 'left');
         $this->db->where('person_id', $person_id);
         $result = $this->db->get()->result();
@@ -28,7 +28,7 @@ class Person_model extends CI_Model {
     
     function get_telephone_numbers($person_id) {
         $this->db->from('person_telephone_number');
-        $this->db->select('telephone_number, comment, isActive');
+        $this->db->select('telephone_number, comment, is_active');
         $this->db->join('telephone_numbers', 'telephone_numbers.id=telephone_number_id', 'left');
         $this->db->where('person_id', $person_id);
         $result = $this->db->get()->result();

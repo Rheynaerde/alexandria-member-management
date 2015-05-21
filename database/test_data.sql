@@ -200,7 +200,7 @@ INSERT INTO `mailaddresses` (`mailaddress`) VALUES
   ('wolkje@domein.be'),
   ('wolkje@mijn-werk.be');
 
-INSERT INTO `mailaddresses` (`mailaddress`, `isActive`) VALUES
+INSERT INTO `mailaddresses` (`mailaddress`, `is_active`) VALUES
   ('regenwolkje@domein.be', '0');
 
 INSERT INTO `person_mailaddress` (`person_id`, `mailaddress_id`, `comment`) VALUES

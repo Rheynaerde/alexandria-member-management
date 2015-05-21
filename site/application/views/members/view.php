@@ -82,7 +82,7 @@ $this->lang->load('certificatetypes');
                         ?>, <?php
                     }
                     $is_first = false;
-                    if($telephonenumber->isActive){
+                    if($telephonenumber->is_active){
                         echo $telephonenumber->telephone_number;
                     } else {
                         ?><span class="inactivephone"><?php
@@ -107,7 +107,7 @@ $this->lang->load('certificatetypes');
                         ?>, <?php
                     }
                     $is_first = false;
-                    if($mailaddress->isActive){
+                    if($mailaddress->is_active){
                         ?><a href="mailto:<?php echo $mailaddress->mailaddress;
                         ?>"><?php echo $mailaddress->mailaddress;
                         ?></a><?php
