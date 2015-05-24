@@ -11,6 +11,20 @@ class MY_Controller extends CI_Controller {
     
 }
 
+class Management_Controller extends MY_Controller {
+
+    public function __construct() {
+        parent::__construct();
+        if(!($this->session->userdata('is_admin') ||
+                $this->session->userdata('has_member_management_rights'))) {
+            $this->lang->load('management');
+            show_error($this->lang->line('management.unauthorized.message'), 403,
+                    $this->lang->line('management.unauthorized.title'));
+        }
+    }
+    
+}
+
 class Admin_Controller extends MY_Controller {
 
     public function __construct() {
