@@ -19,7 +19,7 @@ class Members extends CI_Controller {
         $this->lang->load('members');
         
         if($this->session->userdata('has_member_management_rights')) {
-            $members = $this->member_model->all_members(false);
+            $members = $this->member_model->get_active_members();
         } else {
             $members = $this->member_model->user_members($this->session->userdata('id'), false);
         }
