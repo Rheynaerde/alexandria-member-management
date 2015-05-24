@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `members` (
 -- Set the indices for this table
 ALTER TABLE `members`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `federationId` (`federationId`),
+  ADD UNIQUE KEY `federation_id` (`federation_id`),
   ADD UNIQUE KEY `person_id` (`person_id`),
   ADD KEY `hand` (`hand_id`),
   ADD KEY `is_active` (`is_active`);
