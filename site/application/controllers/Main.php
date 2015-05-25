@@ -2,6 +2,10 @@
 
 class Main extends MY_Controller {
     
+    function index() {
+        redirect('/main/welcome');
+    }
+    
     function welcome() {
         $this->lang->load('main');
         $data['title'] = $this->lang->line('main.welcome.title');
