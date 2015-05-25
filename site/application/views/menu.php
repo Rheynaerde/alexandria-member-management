@@ -12,6 +12,7 @@ $this->lang->load('menu');
    <li class="navigation-menu-item"><a href="" class="navigation-item"><?php echo $this->lang->line('menu.memberships'); ?></a></li>
    <li class="navigation-menu-item-right"><a href="<?php echo site_url('login/logout'); ?>" class="navigation-item"><?php echo $this->lang->line('menu.signout'); ?></a></li>
    <li class="navigation-menu-item-right"><a href="<?php echo site_url('user/settings'); ?>" class="navigation-item"><?php echo $this->lang->line('menu.settings'); ?></a></li>
+   <li class="navigation-menu-item-right"><a href="<?php echo site_url('management/main'); ?>" class="navigation-item"><?php echo $this->lang->line('menu.management'); ?></a></li>
    <li class="navigation-menu-item-right"><a href="<?php echo site_url('admin/main'); ?>" class="navigation-item"><?php echo $this->lang->line('menu.admin'); ?></a></li>
 </ul>
 </div>
