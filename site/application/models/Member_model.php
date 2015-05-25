@@ -129,5 +129,18 @@ class Member_model extends CI_Model {
         $this->db->group_by('m.id');
         return $this->db->get()->result();
     }
+    
+    function get_members_mail_list($active_members) {
+        $this->db->from('mailaddresses as ms');
+        $this->db->select("ms.mailaddress, pm.comment, GROUP_CONCAT(p.first_name SEPARATOR ', ') as first_name, GROUP_CONCAT(DISTINCT p.last_name SEPARATOR ' - ') as last_name", false);
+        $this->db->join('person_mailaddress as pm', 'ms.id=pm.mailaddress_id', 'left');
+        $this->db->join('persons as p', 'p.id=pm.person_id', 'left');
+        $this->db->join('members as m', 'p.id=m.person_id', 'left');
+        $this->db->where('ms.is_active', 1);
+        $this->db->where('m.is_active', $active_members ? 1 : 0);
+        $this->db->order_by('p.last_name', 'ASC');
+        $this->db->group_by('ms.mailaddress');
+        return $this->db->get()->result();
+    }
 }
 
