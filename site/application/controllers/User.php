@@ -2,13 +2,6 @@
 
 class User extends MY_Controller {
 
-    public function __construct() {
-        parent::__construct();
-        if( !$this->session->userdata('is_logged_in') ) {
-            redirect('/login/show_login');
-        }
-    }
-
     function settings() {
         $this->_settings();
     }
