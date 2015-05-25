@@ -6,6 +6,12 @@ $this->lang->load('management/mail');
 
 <div id="body">
 
+<p>
+    <?php echo $this->lang->line('management/mail.lists'); ?>:
+    <a href="<?php echo site_url('management/mail'); ?>"><?php echo $this->lang->line('management/mail.lists.active'); ?></a>,
+    <a href="<?php echo site_url('management/mail/former'); ?>"><?php echo $this->lang->line('management/mail.lists.former'); ?></a>
+</p>
+
 <?php 
 $first = true;
 foreach ($mails as $maildata) { 
