@@ -104,7 +104,7 @@ $autoload['helper'] = array('url', 'language', 'html');
 |
 */
 
-$autoload['config'] = array();
+$autoload['config'] = array('alexandria');
 
 
 /*
