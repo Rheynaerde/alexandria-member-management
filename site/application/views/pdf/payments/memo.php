@@ -6,7 +6,7 @@ $this->lang->load('pdf/payments');
 ?>
 <html>
     <head>
-	<?php echo link_tag(base_url().'css/print_payment.css'); ?>
+	<?php echo link_tag(base_url().'css/print_general.css'); ?>
         <style>
             body {
                 margin-top: 10px;
