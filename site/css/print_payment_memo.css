@@ -22,3 +22,8 @@ table.payment_items>tbody>tr>td {
   border-right: 1px solid black;
   padding: 0.5em;
 }
+
+td.payment_total { 
+  padding-right: 4pt;
+  text-align: right;
+}

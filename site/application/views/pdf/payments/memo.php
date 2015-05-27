@@ -70,7 +70,7 @@ if($item->is_cancelled){
 ?>>
 <td style="text-align: center"><?php echo $i; ?></td>
 <td><?php echo $item->description; ?></td>
-<td class="change_order_total_col"><?php echo $this->config->item('alexandria.currency.symbol'); ?> <?php echo sprintf('%.2f', $item->amount/100); ?></td>
+<td class="payment_total"><?php echo $this->config->item('alexandria.currency.symbol'); ?> <?php echo sprintf('%.2f', $item->amount/100); ?></td>
 </tr>
 <?php
     $i++;
@@ -83,7 +83,7 @@ if($item->is_cancelled){
 
 <tr>
 <td colspan="2" style="text-align: right;"><strong><?php echo $this->lang->line('pdf/payments.memo.grand_total'); ?>:</strong></td>
-<td class="change_order_total_col"><strong><?php echo $this->config->item('alexandria.currency.symbol'); ?> <?php echo sprintf('%.2f', $memo->amount/100); ?></strong></td></tr>
+<td class="payment_total"><strong><?php echo $this->config->item('alexandria.currency.symbol'); ?> <?php echo sprintf('%.2f', $memo->amount/100); ?></strong></td></tr>
 </table>
 
 <div class="payment_text" style="font-size: 10pt; text-align: justify">
