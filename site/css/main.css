@@ -182,3 +182,20 @@ table.data_table thead:not(:first-child) tr th {
 .inactivephone {
     text-decoration: line-through;
 }
+
+table.memo_view_items {
+    width: 100%;
+    margin: auto;
+}
+
+table.memo_view_items th {
+    border: none;
+    font-size: 12px;
+    text-align: left;
+    padding: 5px;
+    background-color: #D0D0D0;
+}
+
+table.memo_view_items td.memo_view_items_amount {
+    text-align: right;
+}
