@@ -1,0 +1,24 @@
+.payment_description {
+    margin-top: 2em;
+}
+
+table.payment_items { 
+  font-size: 8pt;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+table.payment_items>tbody { 
+  border: 1px solid black;
+}
+
+table.payment_items>tbody>tr>th { 
+  border-bottom: 1px solid black;
+}
+
+table.payment_items>tbody>tr>td { 
+  border-right: 1px solid black;
+  padding: 0.5em;
+}

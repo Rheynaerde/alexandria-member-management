@@ -7,6 +7,7 @@ $this->lang->load('pdf/payments');
 <html>
     <head>
 	<?php echo link_tag(base_url().'css/print_general.css'); ?>
+	<?php echo link_tag(base_url().'css/print_payment_memo.css'); ?>
         <style>
             body {
                 margin-top: 10px;
@@ -37,7 +38,17 @@ $this->lang->load('pdf/payments');
 </tr>
 </table>
 
-<table class="change_order_items">
+<?php
+if(isset($memo->description) && strlen(trim($memo->description)) > 0) {
+?>
+<div class="payment_description" style="font-size: 10pt; text-align: justify">
+    <?php echo $memo->description; ?>
+</div>
+<?php
+}
+?>
+
+<table class="payment_items">
 
 <tr><td colspan="3"><h2><?php echo $this->lang->line('pdf/payments.memo.overview'); ?></h2></td></tr>
 
