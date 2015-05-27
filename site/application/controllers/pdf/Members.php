@@ -7,8 +7,8 @@ class Members extends MY_Controller {
     }
     
     function overview() {
-        $this->load->helper('dompdf');
         $this->load->model('member_model');
+        $this->load->model('pdf_model');
         $this->lang->load('members');
         
         if($this->session->userdata('has_member_management_rights')) {
@@ -17,12 +17,10 @@ class Members extends MY_Controller {
             $members = $this->member_model->user_members($this->session->userdata('id'), false);
         }
         
-        $html = $this->load->view('pdf/members/list', array(
-            'members' => $members,
-            'title' => sprintf($this->lang->line('members.overview.pdf.header.format'), date($this->lang->line('members.overview.pdf.header.dateformat')))
-            ), true);
+        $title = sprintf($this->lang->line('members.overview.pdf.header.format'), date($this->lang->line('members.overview.pdf.header.dateformat')));
+        $filename = $this->lang->line('members.overview.pdf.filename.prefix') . date($this->lang->line('members.overview.pdf.filename.dateformat'));
         
-        pdf_create($html, $this->lang->line('members.overview.pdf.filename.prefix') . date($this->lang->line('members.overview.pdf.filename.dateformat')), true);
+        $this->pdf_model->generate_member_list($members, $filename, $title);
     }
 
 }
