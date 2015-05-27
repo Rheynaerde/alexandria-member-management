@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS `payment_memos` (
   `is_paid` tinyint(1) NOT NULL DEFAULT '0',
   `is_cancelled` tinyint(1) NOT NULL DEFAULT '0',
   `name` varchar(45) NOT NULL,
-  `description` varchar(200) DEFAULT NULL,
+  `description` text,
   `giro_description` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
