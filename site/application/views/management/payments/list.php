@@ -55,7 +55,7 @@ $this->lang->load('datepicker');
         <tbody>
 <?php foreach ($memos as $memo) { ?>
             <tr>
-                <td><?php echo $memo->name; ?></td>
+                <td><a href="<?php echo site_url('management/payments/view/' . $memo->id); ?>"><?php echo $memo->name; ?></a></td>
                 <td><?php echo $memo->due_date; ?></td>
                 <td><?php echo sprintf('%.2f', $memo->amount/100); ?></td>
                 <td class="action">
