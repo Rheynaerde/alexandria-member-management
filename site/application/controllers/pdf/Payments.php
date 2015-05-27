@@ -16,7 +16,7 @@ class Payments extends MY_Controller {
                     $this->lang->line('management.unauthorized.title'));
         } else {
         
-            $this->pdf_model->generate_payment_memo($memo_id, $name);
+            $this->pdf_model->generate_payment_memo($memo_id, $name, true);
         }
     }
 

@@ -20,7 +20,7 @@ class Members extends MY_Controller {
         $title = sprintf($this->lang->line('members.overview.pdf.header.format'), date($this->lang->line('members.overview.pdf.header.dateformat')));
         $filename = $this->lang->line('members.overview.pdf.filename.prefix') . date($this->lang->line('members.overview.pdf.filename.dateformat'));
         
-        $this->pdf_model->generate_member_list($members, $filename, $title);
+        $this->pdf_model->generate_member_list($members, $filename, $title, true);
     }
 
 }
