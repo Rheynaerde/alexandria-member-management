@@ -185,6 +185,10 @@ a:hover {
   white-space: nowrap;
 }
 
+.no_break {
+  word-break: keep-all;
+}
+
 .odd_row td {
 /*  background-color: #EDF2F7;
   border-top: 2px solid #FFFFff;*/
