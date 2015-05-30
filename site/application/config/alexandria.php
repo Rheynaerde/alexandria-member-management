@@ -10,6 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['alexandria.site.default_title'] = 'Degencentrum Rheynaerde';
+$config['alexandria.site.club_name'] = 'Degencentrum Rheynaerde';
 
 /*
 |--------------------------------------------------------------------------
