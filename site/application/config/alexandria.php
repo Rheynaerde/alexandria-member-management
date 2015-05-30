@@ -49,3 +49,15 @@ $config['alexandria.payment_memo.address'] = 'Degencentrum Rheynaerde vzw<br>' .
         'e-mail: info@rheynaerde.be';
 $config['alexandria.payment_memo.clubname'] = 'Degencentrum Rheynaerde vzw';
 $config['alexandria.payment_memo.accountnumber'] = 'IBAN: <i>BE98 1420 6537 5193</i>, BIC: <i>GEBA BE BB</i>';
+
+/*
+|--------------------------------------------------------------------------
+| Info sheet
+|--------------------------------------------------------------------------
+|
+| These options configure the appearance of info sheets. The logo should
+| be stored in the images folder in the root of the site.
+|
+*/
+$config['alexandria.infosheet.logo.include'] = FALSE;
+$config['alexandria.infosheet.logo.filename'] = 'logo.png';

@@ -1,0 +1,132 @@
+.page {
+    font-size: 10pt;
+}
+
+table.infosheet_header {
+    width: 100%;
+    font-size: 10pt;
+    border-bottom: 2px solid #000;
+    margin-bottom: 2em;
+}
+
+table.infosheet_header td.infosheet_title {
+    font-size: 40pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+table.infosheet_data_table {
+    width: 90%;
+    margin: 1em auto;
+    border-collapse: collapse;
+    border-spacing: 0px .5em;
+    
+}
+
+table.infosheet_data_table thead {
+    border-bottom: 1px solid #000;
+}
+
+table.infosheet_data_table th {
+    text-align: left;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+table.infosheet_data_table td {
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+table.infosheet_data_table tbody td {
+    border-bottom: 1px dotted #000;
+}
+
+table.infosheet_data_table .no_stretch {
+    width: 1%;
+}
+
+table.infosheet_data_table .infosheet_example {
+    font-weight: normal;
+}
+
+div.infosheet_section_title {
+    width: 100%;
+    border-bottom: 2px solid #000;
+    font-size: 19px;
+    text-align: left;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.infosheet_text {
+    width: 90%;
+    margin: 1em auto;
+    
+}
+
+.infosheet_text ul {
+    list-style-type: disc;
+    
+}
+
+.infosheet_signature_container {
+    width: 90%;
+    margin: 1em auto;
+}
+
+table.infosheet_signature_box {
+    width: 40%;
+    border: 1px solid #000;
+}
+
+table.infosheet_signature_box td {
+    padding-bottom: 4em;
+}
+
+table.infosheet_address_table {
+    width: 90%;
+    margin: 1em auto;
+    
+}
+
+table.infosheet_maindata_table {
+    width: 90%;
+    margin: 1em auto;
+    border-collapse: collapse;
+    border-spacing: 0px .5em;
+}
+
+table.infosheet_maindata_table td.infosheet_property{
+    width: 10%;
+    font-weight: bold;
+    text-align: left;
+    padding-right: 1em;
+}
+
+table.infosheet_maindata_table td.infosheet_property_value{
+    width: 38%;
+    text-align: left;
+    border-bottom: 1px dotted #000;
+}
+
+table.infosheet_maindata_table td.infosheet_spacercell{
+    width: 4%;
+}
+
+table.infosheet_guardian {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0px .5em;
+    margin-bottom: .5em;
+}
+
+table.infosheet_guardian td.infosheet_guardian_header {
+    width: 10%;
+    padding-right: 1em;
+}
+
+table.infosheet_guardian td.infosheet_guardian_value {
+    width: 90%;
+    border-bottom: 1px dotted #000;
+}
