@@ -44,6 +44,16 @@ class Payment_model extends CI_Model {
         return $this->db->get()->result();
     }
     
+    function get_memo_history($memo_id) {
+        $this->db->from('payment_memo_updates');
+        $this->db->select('*');
+        $this->db->select('u.username');
+        $this->db->join('users as u', 'user_id=u.id', 'left');
+        $this->db->where('memo_id', $memo_id);
+        $this->db->order_by('timestamp', 'DESC');
+        return $this->db->get()->result();
+    }
+    
     private function _copy_memo_update_entry($memo){
         $fields = array('date', 'due_date', 'is_paid', 'is_cancelled', 'name', 'description', 'giro_description');
         $data = array();
