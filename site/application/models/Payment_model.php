@@ -97,5 +97,39 @@ class Payment_model extends CI_Model {
             return FALSE;
         }
     }
+    
+    function set_cancel_status($memo_id, $state){
+        if(null!==$this->session->userdata('id')){
+            //only allow a payment to be set if a user is logged in
+            $user_id = $this->session->userdata('id');
+            $memo = $this->get_memo($memo_id);
+            
+            //check whether there is actually a change
+            if(!($state && $memo->is_cancelled) && ($state || $memo->is_cancelled)){
+                $this->db->trans_start();
+                
+                //update the memo
+                $this->db->where('id', $memo_id);
+                $this->db->update('payment_memos', array('is_cancelled' => $state));
+                
+                //create an entry for this update
+                $data = $this->_copy_memo_update_entry($memo);
+                $data['new_is_cancelled'] = $state;
+                $data['memo_id'] = $memo_id;
+                $data['user_id'] = $user_id;
+                
+                $this->db->insert('payment_memo_updates', $data);
+                
+                $this->db->trans_complete();
+                
+                return $this->db->trans_status();
+            } else {
+                //nothing needs to be changed so the setting was succesful
+                return TRUE;
+            }
+        } else {
+            return FALSE;
+        }
+    }
 
 }
