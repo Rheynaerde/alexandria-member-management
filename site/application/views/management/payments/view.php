@@ -89,6 +89,67 @@ $this->lang->load('util');
                 </td>
             </tr>
         </tbody>
-    </table>
+        <thead>
+            <tr>
+                <th colspan="2"><?php echo $this->lang->line('management/payments.view.history'); ?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2">
+                    <table class="memo_view_history">
+                        <tbody>
 
+                            <?php
+                            $i = 1;
+                            foreach ($history as $history_entry) {?>
+
+                            <tr class="<?php echo ($i % 2 == 0) ? 'even_row' : 'odd_row'; ?>">
+                                <td class="no_break no_wrap"><?php echo $history_entry->timestamp; ?></td>
+                                <td><?php echo $history_entry->username; ?></td>
+                                <td><?php
+                                if($history_entry->old_is_paid != $history_entry->new_is_paid){
+                                    if($history_entry->new_is_paid){
+                                        echo $this->lang->line('management/payments.view.history.paid');
+                                    } else {
+                                        echo $this->lang->line('management/payments.view.history.notpaid');
+                                    }
+                                    ?><br>
+                                    <?php
+                                }
+                                
+                                if($history_entry->old_is_cancelled != $history_entry->new_is_cancelled){
+                                    if($history_entry->new_is_cancelled){
+                                        echo $this->lang->line('management/payments.view.history.cancelled');
+                                    } else {
+                                        echo $this->lang->line('management/payments.view.history.notcancelled');
+                                    }
+                                    ?><br>
+                                    <?php
+                                }
+                                
+                                $fields = array('date', 'due_date', 'name', 'description', 'giro_description');
+                                $changed_fields = array();
+                                foreach ($fields as $field){
+                                    if($history_entry->{'new_' . $field} != $history_entry->{'old_' . $field}){
+                                        $changed_fields[] = $this->lang->line('management/payments.field.' . $field);
+                                    }
+                                }
+                                if($changed_fields){
+                                    //array is not empty
+                                    echo $this->lang->line('management/payments.view.history.contentchanged') . ': ' . implode(', ', $changed_fields);
+                                }
+                                ?>
+                                </td>
+                            </tr>
+                            <?php
+                                $i++;
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

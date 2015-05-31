@@ -12,6 +12,19 @@ $lang['management/payments.overview.filename.format'] = 'payment_memo_%s';
 $lang['management/payments.view.title.format'] = 'Payment memo %s';
 $lang['management/payments.view.data'] = 'Details';
 $lang['management/payments.view.items'] = 'Items';
+$lang['management/payments.view.history'] = 'History';
+
+$lang['management/payments.view.history.paid'] = 'Marked as paid.';
+$lang['management/payments.view.history.notpaid'] = 'Marked as not paid.';
+$lang['management/payments.view.history.cancelled'] = 'Cancelled.';
+$lang['management/payments.view.history.notcancelled'] = 'Removed cancellation.';
+$lang['management/payments.view.history.contentchanged'] = 'Content changed';
+
+$lang['management/payments.field.name'] = 'name';
+$lang['management/payments.field.date'] = 'date';
+$lang['management/payments.field.due_date'] = 'due date';
+$lang['management/payments.field.description'] = 'description';
+$lang['management/payments.field.giro_description'] = 'giro description';
 
 $lang['management/payments.properties.paid_status.no'] = 'Not yet paid';
 $lang['management/payments.properties.paid_status.yes'] = 'Paid';

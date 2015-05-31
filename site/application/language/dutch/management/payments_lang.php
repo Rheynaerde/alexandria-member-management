@@ -12,6 +12,19 @@ $lang['management/payments.overview.filename.format'] = 'onkostennota_%s';
 $lang['management/payments.view.title.format'] = 'Onkostennota %s';
 $lang['management/payments.view.data'] = 'Details';
 $lang['management/payments.view.items'] = 'Items';
+$lang['management/payments.view.history'] = 'Geschiedenis';
+
+$lang['management/payments.view.history.paid'] = 'Gemarkeerd als betaald.';
+$lang['management/payments.view.history.notpaid'] = 'Gemarkeerd als niet-betaald.';
+$lang['management/payments.view.history.cancelled'] = 'Geannuleerd.';
+$lang['management/payments.view.history.notcancelled'] = 'Annulatie ongedaan gemaakt.';
+$lang['management/payments.view.history.contentchanged'] = 'Inhoud gewijzigd';
+
+$lang['management/payments.field.name'] = 'naam';
+$lang['management/payments.field.date'] = 'datum';
+$lang['management/payments.field.due_date'] = 'betalingsdatum';
+$lang['management/payments.field.description'] = 'beschrijving';
+$lang['management/payments.field.giro_description'] = 'kenmerk';
 
 $lang['management/payments.properties.paid_status.no'] = 'Nog niet betaald';
 $lang['management/payments.properties.paid_status.yes'] = 'Betaald';

@@ -34,7 +34,8 @@ class Payments extends Management_Controller {
         $this->load->view('management/payments/view', 
                 array(
                     'memo' => $this->payment_model->get_memo($memo_id),
-                    'items' => $this->payment_model->get_memo_items($memo_id)));
+                    'items' => $this->payment_model->get_memo_items($memo_id),
+                    'history' => $this->payment_model->get_memo_history($memo_id)));
         $this->load->view('footer',$data);
     }
 }
