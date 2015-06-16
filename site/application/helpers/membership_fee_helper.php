@@ -14,7 +14,7 @@ function get_membership_fee($member_id, $season) {
     $CI->db->from('members as m');
     $CI->db->select('m.id, p.birthdate, mfo.amount as fee_override, mfo.minimum_amount as minimum_fee_override');
     $CI->db->select('TIMESTAMPDIFF(YEAR,p.birthdate,CURDATE()) as age', false);
-    $CI->db->select('TIMESTAMPDIFF(YEAR,p.birthdate,' . $season->start . ') as age_at_start_season', false);
+    $CI->db->select('TIMESTAMPDIFF(YEAR,p.birthdate,' . $season->begin . ') as age_at_start_season', false);
     $CI->db->select('TIMESTAMPDIFF(YEAR,p.birthdate,' . $season->end . ') as age_at_end_season', false);
     $CI->db->join('persons as p', 'p.id=m.person_id', 'left');
     $CI->db->join('membership_fee_override as mfo', 'm.id=mfo.member_id', 'left');
