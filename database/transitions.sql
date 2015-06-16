@@ -8,7 +8,8 @@ CREATE TABLE IF NOT EXISTS `transitions` (
   `season_id` int(11) NOT NULL,
   `state_id` int(11) NOT NULL,
   `is_cancelled` tinyint(1) NOT NULL,
-  `fee` int(11) NOT NULL
+  `fee` int(11) NOT NULL,
+  `minimum_fee` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
