@@ -21,7 +21,7 @@ function get_membership_fee($member_id, $season) {
     $CI->db->where('m.id', $member_id);
     $CI->db->group_by('m.id');
     
-    $result = $this->db->get()->result();
+    $result = $CI->db->get()->result();
     if(is_array($result) && count($result) == 1){
         $member = $result[0];
     } else {
