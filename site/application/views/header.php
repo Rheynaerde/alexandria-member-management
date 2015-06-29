@@ -12,7 +12,8 @@ if (isset($sortable_tables) && $sortable_tables) {
 	<title><?php if (isset($title) && $title) { echo $title; } else { echo $this->config->item('alexandria.site.default_title'); } ?></title>
 
 	<?php echo link_tag(base_url().'css/main.css'); ?>
-        
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
         <?php if (isset($jquery) && $jquery) { ?>
         <script src="<?php echo base_url(); ?>js/jquery-2.1.3.min.js"></script>
         <script src="<?php echo base_url(); ?>js/jquery-ui.min.js"></script>
