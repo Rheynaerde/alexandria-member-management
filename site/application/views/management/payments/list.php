@@ -59,7 +59,7 @@ $this->lang->load('datepicker');
                 <td><?php echo $memo->due_date; ?></td>
                 <td><?php echo sprintf('%.2f', $memo->amount/100); ?></td>
                 <td class="action">
-                    <a href="<?php echo site_url('pdf/payments/memo/' . $memo->id . '/' . sprintf($this->lang->line('management/payments.overview.filename.format'), $memo->id)); ?>"><?php echo $this->lang->line('management/payments.overview.as_pdf'); ?></a>
+                    <a href="<?php echo site_url('pdf/payments/memo/' . $memo->id . '/' . sprintf($this->lang->line('management/payments.overview.filename.format'), $memo->id)); ?>"><span class="fa fa-file-pdf-o" title="<?php echo $this->lang->line('management/payments.overview.as_pdf'); ?>"></span></a>
                 </td>
             </tr>
 <?php } ?>
